@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 560" role="img" aria-label="Blue retro arcade vinyl with checkerboard hills, palm trees, stars and golden rings">
+<defs>
+  <linearGradient id="blue" x2="0.1" y2="1"><stop stop-color="#0643ad"/><stop offset=".52" stop-color="#087ee9"/><stop offset="1" stop-color="#02336e"/></linearGradient>
+  <linearGradient id="water" x2="0" y2="1"><stop stop-color="#36d0ff"/><stop offset="1" stop-color="#0754c9"/></linearGradient>
+  <linearGradient id="gold" x2="0.8" y2="1"><stop stop-color="#fff57b"/><stop offset=".32" stop-color="#ffd328"/><stop offset=".72" stop-color="#ff9800"/><stop offset="1" stop-color="#d35b00"/></linearGradient>
+  <pattern id="checks" width="72" height="72" patternUnits="userSpaceOnUse"><rect width="72" height="72" fill="#0750bb"/><path d="M0 0H36V36H72V72H36V36H0Z" fill="#1472df" opacity=".9"/><path d="M36 0H72V36H36ZM0 36H36V72H0Z" fill="#032b79" opacity=".55"/></pattern>
+  <pattern id="ground" width="52" height="34" patternUnits="userSpaceOnUse"><rect width="52" height="34" fill="#ed8b25"/><path d="M0 0H26V17H52V34H26V17H0Z" fill="#a94d16"/><path d="M26 0H52V17H26ZM0 17H26V34H0Z" fill="#ffbb43"/></pattern>
+  <g id="ring"><ellipse rx="42" ry="29" fill="none" stroke="#ad4c00" stroke-width="19"/><ellipse rx="42" ry="29" fill="none" stroke="url(#gold)" stroke-width="13"/><path d="M-24 -20Q0 -35 20 -23" fill="none" stroke="#fff8b7" stroke-width="5" stroke-linecap="round"/></g>
+  <g id="star"><path d="M0 -27L7 -8L27 -8L11 4L17 24L0 12L-17 24L-11 4L-27 -8L-7 -8Z" fill="#f4fbff" stroke="#b5e8ff" stroke-width="2"/></g>
+  <g id="palm"><path d="M0 0Q-8 -30 -5 -61Q-2 -91 10 -111" fill="none" stroke="#7b3b1d" stroke-width="14" stroke-linecap="round"/><path d="M7 -108Q-21 -144 -59 -139Q-41 -106 -8 -101Q-48 -119 -62 -90Q-26 -88 -5 -100Q-38 -89 -34 -62Q-3 -78 7 -100Q-4 -64 20 -47Q30 -82 12 -101Q46 -86 61 -109Q34 -122 12 -107Q35 -132 15 -151Q-3 -132 7 -108Z" fill="#35d34b" stroke="#087f34" stroke-width="3"/><path d="M7 -107L-45 -130M8 -108L-57 -91M9 -107L-25 -66M9 -108L17 -146M10 -106L49 -111M9 -107L42 -87" fill="none" stroke="#8eff54" stroke-width="3"/></g>
+</defs>
+<rect width="1280" height="560" fill="url(#blue)"/>
+<path d="M0 0H1280V180L1110 228L960 182L805 230L640 165L480 225L310 160L140 213L0 180Z" fill="url(#checks)" opacity=".8"/>
+<path d="M0 90L260 0H398L92 145Z" fill="#ffd21e"/><path d="M0 122L189 0H230L32 145Z" fill="#fff"/><path d="M1280 88L1052 183H996L1190 74Z" fill="#ffcf1a"/><path d="M1280 124L1103 202H1072L1250 116Z" fill="#fff"/>
+<use href="#star" x="366" y="158" transform="rotate(-7 366 158)"/><use href="#star" x="900" y="120" transform="rotate(13 900 120)"/><use href="#star" x="1030" y="360" transform="rotate(-10 1030 360)"/><use href="#star" x="230" y="390" transform="rotate(10 230 390)"/>
+<use href="#ring" x="247" y="133" transform="rotate(-18 247 133)"/><use href="#ring" x="1065" y="182" transform="rotate(15 1065 182)"/><use href="#ring" x="925" y="446" transform="rotate(-17 925 446)"/><use href="#ring" x="345" y="454" transform="rotate(12 345 454)"/>
+<path d="M0 322L70 285L143 309L207 256L274 292L338 254L414 295L486 268L563 304L645 270L719 301L792 256L860 288L932 251L1006 300L1087 265L1162 304L1280 264V560H0Z" fill="#1ab84b" stroke="#b5ff4d" stroke-width="9"/>
+<path d="M0 363L73 323L148 351L215 302L288 339L350 306L432 346L508 317L584 354L660 315L736 351L812 307L890 344L962 308L1036 350L1112 320L1194 355L1280 319V560H0Z" fill="url(#ground)" stroke="#fdba43" stroke-width="4"/>
+<path d="M0 390L1280 390V560H0Z" fill="url(#water)" opacity=".92"/>
+<path d="M0 418Q150 402 300 421T600 419T900 420T1280 415" fill="none" stroke="#a2f4ff" stroke-width="5" opacity=".75"/>
+<g fill="#e0faff" opacity=".85"><path d="M90 458h95v5H90zM257 481h48v4h-48zM414 447h120v4H414zM650 480h85v5h-85zM805 453h160v4H805zM1040 489h76v5h-76zM1120 438h98v4h-98z"/></g>
+<use href="#palm" x="92" y="338" transform="rotate(-4 92 338)"/><use href="#palm" x="1180" y="334" transform="rotate(4 1180 334)"/>
+<path d="M0 516L160 560H260L0 488Z" fill="#ffd21b"/><path d="M0 538L90 560H126L0 521Z" fill="#fff"/><path d="M1280 510L1114 560H1050L1280 488Z" fill="#ffd21b"/><path d="M1280 537L1194 560H1157L1280 521Z" fill="#fff"/>
+<rect x="7" y="7" width="1266" height="546" rx="18" fill="none" stroke="#d7e8ff" stroke-opacity=".45" stroke-width="3"/>
+</svg>

@@ -1,0 +1,14 @@
+Botsebita Mega Drive Emulator v1.4 — HTML5 build
+
+Emulator core: Monte Ohrt, MIT License. See LICENSE-EMULATOR.txt.
+Default ROM: Snow Bros. - Nick & Tom (ESP), supplied by the project owner. The original game and ROM remain the property of their respective rights holders. Include or publicly distribute this ROM only if you have the necessary rights or permission.
+Snow Bros. cartridge-cover preview: the UI requests a cover image hosted by Gavas (https://www.gavas.jp/products/detail.php?product_id=5825). This image is fetched from the external host at runtime and is not included as a local asset; if unavailable, a local fallback label is shown. Verify image-use rights before public distribution.
+Additional homebrew game: Minesweeper MD, credited to Nightwolf-47, MIT License. Its cartridge artwork in this project is custom-made homebrew artwork, not an original commercial cover.
+Netplay: experimental WebRTC peer-to-peer input relay with guided room flow; no rollback/frame lock and no TURN relay server. UI supports Spanish, English, Portuguese and French. Mobile build includes explicit ROM import, responsive touch controller and a persistent size slider. Cartridge navigation uses left/right arrows on desktop and mobile.
+
+Netplay v1.9: servicio de señalización WebSocket propio y configuración TURN compatible con coturn. La distribución no incluye un servicio de red alojado.
+
+
+PeerJS 1.5.5 (client cargado desde jsDelivr para señalización WebRTC): licencia MIT. https://github.com/peers/peerjs
+
+Battletoads in Blast Processing v1.0: homebrew por Soulchip TV, incluido en la biblioteca a petición del propietario del proyecto.

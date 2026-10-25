@@ -1,0 +1,830 @@
+:root{color-scheme:dark;--bg:#0b1018;--surface:#121a25;--surface2:#192433;--border:#263447;--text:#e6edf7;--muted:#8493a8;--blue:#4b83ff;--blue2:#3269ee;--amber:#ffb443;--green:#5de0ab;--font:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font-family:var(--font)}body{min-height:100vh}button,input,select{font:inherit}button{color:inherit}button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--amber);outline-offset:3px}.app-shell{min-height:100vh;display:flex;flex-direction:column;background:radial-gradient(ellipse at 76% -15%,rgba(49,107,238,.14),transparent 46%),var(--bg)}.topbar{height:68px;min-height:68px;display:flex;align-items:center;gap:13px;padding:0 22px;border-bottom:1px solid var(--border);background:rgba(11,16,24,.92)}.brand-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(145deg,#6298ff,#2858d4);display:grid;place-items:center;font-weight:900;font-size:12px;letter-spacing:-.06em;box-shadow:0 5px 20px #1a41835c}.brand-copy{min-width:0}.brand-title{font-size:13px;font-weight:900;letter-spacing:.11em}.brand-subtitle{font-size:9px;color:#8291a6;letter-spacing:.16em;margin-top:4px}.topbar-actions{margin-left:auto;display:flex;gap:8px}.button{border:1px solid #344258;background:#182230;border-radius:9px;padding:9px 12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:700;transition:background .15s,border-color .15s;cursor:pointer;white-space:nowrap}.button:hover:not(:disabled){background:#253348;border-color:#526987}.button:disabled{opacity:.4;cursor:not-allowed}.button.primary{border-color:var(--blue);background:var(--blue);color:white;box-shadow:0 4px 14px #3269ee35}.button.primary:hover:not(:disabled){background:var(--blue2)}.button.subtle{background:transparent;color:var(--muted)}.icon-button{width:38px;padding:0;font-size:17px}.workspace{flex:1;min-height:0;display:grid;grid-template-columns:260px minmax(0,1fr)}.sidebar{padding:22px 15px 14px;border-right:1px solid var(--border);background:rgba(13,20,30,.68);display:flex;flex-direction:column;min-height:0}.sidebar-heading{display:flex;align-items:center;justify-content:space-between;font-size:13px;font-weight:800;padding:0 6px 14px}.library-count{color:#7d8da4;background:#202c3c;border-radius:5px;font-size:10px;padding:3px 6px}.search-box{height:36px;background:#101722;border:1px solid #263346;border-radius:8px;display:flex;align-items:center;gap:9px;padding:0 10px;color:#7f91a9}.search-box>span{font-size:22px;line-height:1}.search-box input{width:100%;border:0;outline:0!important;background:transparent;color:var(--text);font-size:11px;min-width:0}.search-box input::placeholder{color:#66758a}.library-label{padding:24px 6px 10px;color:#78889e;letter-spacing:.14em;font-weight:800;font-size:9px}.game-entry{width:100%;display:flex;align-items:center;gap:10px;padding:10px 8px;background:transparent;border:1px solid transparent;border-radius:10px;text-align:left;cursor:pointer}.game-entry.selected{background:#16243a;border-color:#2f4b75}.game-entry:hover{background:#172538}.game-art{width:48px;height:52px;flex:none;border-radius:7px;background:linear-gradient(155deg,#2e75c9,#0f274d);border:1px solid #3d74b6;display:flex;position:relative;align-items:center;justify-content:center;font-weight:900;font-size:13px;color:#eaf4ff;box-shadow:inset 0 0 16px #86c4ff27}.game-art:before{content:"";position:absolute;inset:6px;border:1px solid #8bbaff66;border-radius:4px}.game-art i{position:absolute;right:4px;top:2px;color:#ffcc65;font-style:normal;font-size:11px}.game-entry-copy{display:flex;min-width:0;flex-direction:column;gap:5px}.game-entry-copy strong{font-size:11px;line-height:1.2}.game-entry-copy small,.game-entry-copy em{font-size:9px;color:#91a0b4;font-style:normal}.game-entry-copy em{color:#70b8ff}.entry-arrow{margin-left:auto;color:#7c91ae;font-size:19px}.recent-label{padding-top:25px}.recent-list{display:flex;flex-direction:column;gap:5px}.empty-recent{margin:0;padding:0 6px;color:#68788e;font-size:10px;line-height:1.55}.recent-entry{display:flex;text-align:left;flex-direction:column;gap:4px;border:1px solid transparent;background:transparent;border-radius:7px;padding:9px 8px;cursor:pointer}.recent-entry:hover{border-color:#32465f;background:#172233}.recent-entry strong{font-size:10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.recent-entry small{font-size:9px;color:#8493a8}.sidebar-spacer{flex:1;min-height:20px}.sidebar-note{display:flex;gap:8px;background:#121d2b;border:1px solid #26364b;border-radius:9px;padding:10px;color:#93a2b5}.note-icon{font-size:13px;color:#78adff}.sidebar-note p{margin:0;font-size:10px;line-height:1.5}.credits{font-size:9px;color:#5e6e83;line-height:1.4;padding:13px 3px 0}.player-column{min-width:0;display:flex;flex-direction:column;padding:19px 25px 16px;min-height:0}.player-heading{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 2px 14px}.eyebrow{margin:0;color:#758ba8;font-size:9px;font-weight:900;letter-spacing:.18em}.player-heading h1{font-size:18px;margin:5px 0 0;letter-spacing:-.025em}.status-pill{display:flex;align-items:center;gap:7px;background:#13241f;border:1px solid #254b3f;color:#91e2bf;border-radius:100px;padding:6px 10px;font-size:9px;font-weight:800;white-space:nowrap}.status-dot{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 9px #5de0ab6e}.status-pill[data-state="loading"]{color:#f3c478;background:#2b2214;border-color:#5a4223}.status-pill[data-state="loading"] .status-dot{background:var(--amber)}.status-pill[data-state="error"]{color:#ff9d9d;background:#2a171a;border-color:#61303b}.status-pill[data-state="error"] .status-dot{background:#ff6a78}.stage{position:relative;isolation:isolate;flex:1;min-height:250px;max-height:calc(100dvh - 280px);height:clamp(280px,47vh,640px);overflow:hidden;background:#080b12;border:1px solid #2a3445;border-radius:13px;display:flex;align-items:center;justify-content:center;box-shadow:0 24px 65px #0005,inset 0 0 0 1px #ffffff05}.stage:before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at center,#1e2a3b 0%,#111923 53%,#0b1018 100%)}.stage-grain{position:absolute;inset:0;z-index:-1;opacity:.12;background-image:linear-gradient(0deg,transparent 49%,#526883 50%,transparent 51%);background-size:100% 5px;pointer-events:none}.screen-surround{width:min(90%,calc((100dvh - 330px)*1.43));max-width:920px;aspect-ratio:10/7;display:flex;align-items:center;justify-content:center;border:1px solid #27364b;border-radius:12px;background:linear-gradient(145deg,#151e2a,#070a10);padding:clamp(10px,2vw,25px);box-shadow:0 15px 40px #0008,inset 0 0 0 4px #ffffff04}.screen-slot{width:100%;height:100%;position:relative;background:#030507;display:flex;align-items:center;justify-content:center;border:1px solid #304057;overflow:hidden;box-shadow:inset 0 0 25px #000}.screen-slot canvas{display:block;image-rendering:pixelated;image-rendering:crisp-edges;max-width:100%;max-height:100%}.scanlines{position:absolute;inset:0;pointer-events:none;background:repeating-linear-gradient(to bottom,#0000 0px,#0000 2px,#0007 3px);opacity:.27}.stage-corner{position:absolute;color:#61738b;font-size:8px;letter-spacing:.13em;font-weight:800}.stage-corner.top-left{top:17px;left:18px}.stage-corner.bottom-left{bottom:15px;left:18px}.stage-corner.bottom-right{bottom:15px;right:18px}.stage-corner #power-led{display:inline-block;margin-left:5px;width:5px;height:5px;border-radius:50%;background:#304053}.stage-corner #power-led.on{background:#5de0ab;box-shadow:0 0 8px #5de0ab}.pause-overlay{position:absolute;inset:0;z-index:4;display:grid;place-items:center;background:#050a12b8;backdrop-filter:blur(7px)}.pause-overlay[hidden],.scanlines[hidden]{display:none}.pause-card{width:min(300px,calc(100% - 30px));padding:24px;border:1px solid #354864;border-radius:13px;background:#111b2a;box-shadow:0 20px 55px #0009;display:flex;flex-direction:column;gap:8px;text-align:center}.pause-symbol{margin:0 auto 4px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#244b91;color:#fff;font-size:20px}.pause-card h2{margin:0 0 8px;font-size:20px}.pause-card .button{width:100%;padding:11px}.transport-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0 9px}.transport-buttons{display:flex;gap:7px;flex-wrap:wrap}.controller-status{display:flex;align-items:center;gap:8px;color:#92a0b3;font-size:10px}.controller-icon{display:grid;place-items:center;width:25px;height:25px;border-radius:7px;background:#172231;border:1px solid #2c3b50;font-size:13px}.message-line{min-height:18px;padding:3px 2px 0;color:#8c9bb0;font-size:10px}.message-line.error{color:#ff969d}.touch-controls{display:flex;align-items:center;justify-content:center;gap:clamp(20px,6vw,75px);margin:7px auto 0;width:min(100%,560px);padding:2px 0 6px}.dpad{width:102px;height:102px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:4px;flex:none}.pad-button{border:1px solid #35455a;background:linear-gradient(145deg,#27374a,#172332);color:#b5c6dc;box-shadow:0 3px 0 #09101b;border-radius:7px;min-width:0;touch-action:none;user-select:none;cursor:pointer;font-weight:900;font-size:11px}.pad-button:active,.pad-button.is-held{background:#3564af;color:white;box-shadow:0 1px 0 #09101b;transform:translateY(2px)}.dpad-up{grid-area:1/2}.dpad-left{grid-area:2/1}.dpad-right{grid-area:2/3}.dpad-down{grid-area:3/2}.touch-center{align-self:center;display:flex;flex-direction:column;align-items:center;gap:14px;color:#596d86;font-size:8px;font-weight:900;letter-spacing:.2em}.mode-button{padding:6px 10px;font-size:8px;border-radius:20px}.action-pad{width:160px;height:110px;display:grid;grid-template:repeat(3,1fr)/repeat(4,1fr);gap:5px;position:relative;flex:none}.face-button{border-radius:50%;width:34px;height:34px;border-color:#76505d;background:linear-gradient(145deg,#704554,#372430);color:#f5c9d4;justify-self:center;align-self:center}.face-x{grid-area:1/3}.face-y{grid-area:1/2}.face-z{grid-area:1/4}.face-a{grid-area:2/3}.face-b{grid-area:2/2}.face-c{grid-area:2/4}.start-button{grid-area:3/1/4/5;justify-self:center;width:76px;border-radius:20px;font-size:8px;letter-spacing:.12em}.player-footer{display:flex;justify-content:space-between;gap:10px;font-size:9px;color:#617087;border-top:1px solid #1e2b3d;margin-top:8px;padding:9px 2px 0}.settings-dialog{width:min(560px,calc(100% - 22px));max-height:min(90vh,850px);padding:0;border:1px solid #33465f;border-radius:14px;background:#101925;color:var(--text);box-shadow:0 26px 100px #000b}.settings-dialog::backdrop{background:#03060dcc;backdrop-filter:blur(4px)}.settings-header{margin:0;padding:20px 22px 17px;border-bottom:1px solid #263448;display:flex;align-items:center;justify-content:space-between}.settings-header h2{margin:5px 0 0;font-size:19px}.settings-content{padding:18px 22px 22px;overflow:auto;max-height:calc(90vh - 90px);display:flex;flex-direction:column;gap:15px}.setting-field{display:flex;flex-direction:column;gap:8px;color:#bdcadb;font-size:11px;font-weight:700}.setting-field select{width:100%;background:#0c131d;color:#e7edf6;border:1px solid #2a3a50;border-radius:8px;padding:10px}.setting-field input[type=range]{width:100%;accent-color:var(--blue)}.setting-field output{float:right;color:#92b8ff}.setting-toggle{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #202d3e;padding:0 0 12px;color:#bfcadb;font-size:11px}.setting-toggle span{display:flex;flex-direction:column;gap:4px}.setting-toggle small{color:#73839a;font-size:10px;font-weight:400}.setting-toggle input{width:17px;height:17px;accent-color:var(--blue)}.key-bindings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.key-binding{display:flex;flex-direction:column;gap:6px;padding:8px;background:#151f2d;border:1px solid #26364a;border-radius:8px;color:#899bb4;font-size:10px}.key-binding button{background:#0d1520;border:1px solid #33445c;border-radius:6px;padding:7px 4px;color:#e3ebf8;font-size:11px;font-weight:800;cursor:pointer}.key-binding button.listening{border-color:var(--amber);color:var(--amber)}.small-hint{color:#718198;font-size:10px;line-height:1.45;margin:0}.settings-footer{display:flex;justify-content:flex-end;gap:8px;padding-top:3px}.settings-footer .button{font-size:11px}
+@media(min-width:1300px){.player-column{padding-left:34px;padding-right:34px}.stage{height:clamp(320px,52vh,720px)}}
+@media(max-width:850px){.workspace{grid-template-columns:210px minmax(0,1fr)}.sidebar{padding-left:11px;padding-right:11px}.player-column{padding:17px 16px 14px}.transport-bar{align-items:flex-start;flex-direction:column}.controller-status{font-size:9px}.screen-surround{width:min(93%,calc((100dvh - 370px)*1.43));padding:12px}.stage{height:clamp(240px,42vh,470px);min-height:240px}.touch-controls{gap:20px}.player-footer{font-size:8px}}
+@media(max-width:620px){.topbar{height:58px;min-height:58px;padding:0 12px;gap:9px}.brand-mark{width:31px;height:31px}.brand-title{font-size:11px}.brand-subtitle{font-size:8px;letter-spacing:.09em}.topbar-actions .button{padding:8px}.topbar-actions .button span{display:none}.topbar-actions .icon-button{width:34px}.workspace{display:flex;flex-direction:column}.player-column{padding:14px 12px 12px;order:0}.sidebar{order:1;border-right:0;border-top:1px solid var(--border);padding:14px 12px 18px}.sidebar-heading{padding-bottom:10px}.sidebar-note,.credits,.sidebar-spacer{display:none}.library-label{padding-top:15px}.recent-label{padding-top:18px}.stage{height:clamp(235px,39vh,360px);min-height:235px;max-height:none;border-radius:10px}.player-heading{padding-bottom:10px}.player-heading h1{font-size:16px}.status-pill{padding:5px 7px;font-size:8px}.screen-surround{width:min(96%,calc((100dvh - 385px)*1.43));padding:8px;border-radius:8px}.stage-corner{font-size:7px}.stage-corner.top-left{top:10px;left:10px}.stage-corner.bottom-left{bottom:9px;left:10px}.stage-corner.bottom-right{bottom:9px;right:10px}.transport-bar{padding:9px 0 5px;gap:9px}.transport-buttons{gap:5px}.transport-buttons .button{font-size:10px;padding:8px 9px}.controller-status{font-size:9px}.touch-controls{gap:clamp(10px,5vw,24px);width:100%;margin-top:9px}.dpad{width:90px;height:90px}.action-pad{width:143px;height:100px;gap:3px}.face-button{width:31px;height:31px}.player-footer{flex-direction:column;gap:4px;margin-top:5px}.key-bindings{grid-template-columns:repeat(2,minmax(0,1fr))}.settings-header{padding:17px}.settings-content{padding:15px 17px 18px}.pause-card{padding:18px}.game-entry{padding:8px 6px}}
+@media(max-height:580px) and (min-width:621px){.topbar{height:52px;min-height:52px}.player-column{padding-top:10px;padding-bottom:8px}.player-heading{padding-bottom:7px}.player-heading h1{font-size:15px}.stage{height:clamp(190px,45vh,330px);min-height:190px}.screen-surround{width:min(75%,calc((100dvh - 250px)*1.43));padding:8px}.touch-controls{margin-top:3px;transform:scale(.85);transform-origin:top center;margin-bottom:-12px}.transport-bar{padding:7px 0 4px}.player-footer{padding-top:6px;margin-top:5px}}
+
+/* Larger console display and an embedded, static-host-friendly netplay panel. */
+.stage{height:clamp(420px,64vh,900px);max-height:calc(100dvh - 205px);min-height:380px}
+.screen-surround{width:min(98%,calc((100dvh - 205px)*1.43));max-width:1450px;padding:clamp(8px,1.4vw,18px)}
+.stage:fullscreen{width:100vw;height:100dvh;max-height:none;min-height:100dvh;border:0;border-radius:0}
+.stage:fullscreen .screen-surround{width:min(97vw,calc(96dvh * 1.43));max-width:none;max-height:96dvh;padding:clamp(6px,1.2vw,18px)}
+.netplay-panel{margin:10px 0 3px;border:1px solid #2b3b52;border-radius:11px;background:#101824;overflow:hidden}
+.netplay-panel>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px}
+.netplay-panel>summary::-webkit-details-marker{display:none}
+.netplay-panel>summary:after{content:'＋';color:#8da8cd;font-size:17px;margin-left:5px}
+.netplay-panel[open]>summary:after{content:'−'}
+.netplay-panel>summary>span:first-child{display:flex;flex-direction:column;gap:4px}
+.netplay-panel>summary strong{font-size:12px}
+.netplay-panel>summary small{font-size:10px;color:#8192aa}
+.netplay-state{font-size:10px;padding:5px 8px;border-radius:999px;background:#222c3b;color:#b9c7da;white-space:nowrap}
+.netplay-state[data-state="connecting"]{background:#332916;color:#ffce7c}
+.netplay-state[data-state="connected"]{background:#153429;color:#82e8b9}
+.netplay-state[data-state="error"]{background:#351c22;color:#ff9ca7}
+.netplay-content{border-top:1px solid #26364b;padding:12px 14px 14px;display:flex;flex-direction:column;gap:9px}
+.netplay-explainer,.netplay-steps,.netplay-warning{margin:0;color:#9aabc1;font-size:10px;line-height:1.5}
+.netplay-warning{color:#efc18a}
+.netplay-actions{display:flex;flex-wrap:wrap;gap:7px}
+.netplay-actions .button{font-size:10px;padding:8px 10px}
+.netplay-label{display:block;color:#b9c7da;font-size:10px;font-weight:800;margin-bottom:5px}
+.netplay-code{width:100%;resize:vertical;background:#080e17;color:#dce7f7;border:1px solid #2b3a50;border-radius:8px;padding:9px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;line-height:1.4;overflow-wrap:anywhere}
+.netplay-output-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.netplay-output-row .netplay-label{margin:0}
+.snow-art{background:linear-gradient(155deg,#6d90dd,#19345d);border-color:#6685c4}
+@media(min-width:1300px){.stage{height:clamp(520px,68vh,980px);max-height:calc(100dvh - 190px)}.screen-surround{max-width:1600px}}
+@media(max-width:850px){.stage{height:clamp(340px,58vh,640px);max-height:none;min-height:320px}.screen-surround{width:min(98%,calc((100dvh - 250px)*1.43));max-width:none;padding:8px}}
+@media(max-width:620px){.stage{height:clamp(330px,53vh,510px);min-height:310px}.screen-surround{width:min(98%,calc((100dvh - 260px)*1.43));padding:6px}.netplay-panel>summary{padding:10px}.netplay-content{padding:10px}.netplay-actions .button{flex:1 1 calc(50% - 7px);white-space:normal}.netplay-code{font-size:9px}}
+@media(max-height:580px) and (min-width:621px){.stage{height:calc(100dvh - 165px);max-height:none;min-height:240px}.screen-surround{width:min(96%,calc((100dvh - 180px)*1.43));padding:6px}}
+
+/* v1.2 — Botsebita branded cartridge library, localized interface and mobile-first controls */
+[hidden]{display:none!important}
+.topbar{position:relative;z-index:5;padding-inline:clamp(10px,2vw,26px)}
+.brand-mark{width:43px;height:36px;border-radius:4px;background:linear-gradient(180deg,#e7e9eb,#9da5ad);color:#222a33;border:2px solid #626b75;font-size:10px;letter-spacing:-.04em;box-shadow:inset 0 0 0 2px #ffffff44;transform:skew(-3deg)}
+.brand-title{font-size:clamp(10px,.9vw,13px);letter-spacing:.065em;white-space:nowrap}
+.brand-subtitle{font-size:8px;letter-spacing:.12em}
+.language-picker{display:flex;align-items:center;gap:6px;color:#8493a8;font-size:10px;font-weight:800}
+.language-picker select{max-width:112px;background:#121c29;border:1px solid #2d3d53;color:#e6edf7;border-radius:8px;padding:8px 22px 8px 8px;font-size:11px}
+.workspace{grid-template-columns:clamp(235px,21vw,310px) minmax(0,1fr)}
+.sidebar{padding:18px 13px 13px}
+.library-label{padding-top:18px;padding-bottom:8px;font-size:8px}
+.game-entry{gap:11px;padding:10px 8px;border-color:#28394d;border-radius:10px;background:linear-gradient(110deg,#101923,#0e151f);min-height:94px;overflow:hidden}
+.game-entry.selected{background:linear-gradient(110deg,#182b44,#101b2a);border-color:#4d6e9f;box-shadow:inset 3px 0 #6ca1ff,0 5px 14px #0002}
+.game-art{width:66px;height:77px;flex:none;display:flex;flex-direction:column;justify-content:flex-start;gap:0;padding:12px 4px 5px;overflow:hidden;position:relative;border:2px solid #7f8994;border-radius:5px 5px 8px 8px;clip-path:polygon(5% 0,95% 0,100% 9%,94% 16%,94% 100%,6% 100%,6% 16%,0 9%);box-shadow:inset 0 0 0 2px #1118,inset 0 -9px 0 #0004,2px 3px 0 #070b11;background:linear-gradient(160deg,#d7dce1 0%,#596573 24%,#202b38 24%,#111820 100%);color:#edf3f8}
+.game-art:before{inset:10px 6px 13px;border:1px solid #dce6f466;border-radius:2px;pointer-events:none}
+.game-art .cartridge-stamp{display:block;position:relative;z-index:1;margin:0 auto 6px;padding:2px 3px;width:calc(100% - 3px);background:#c8d1db;color:#202a36;text-align:center;font-size:6px;font-weight:1000;letter-spacing:.1em;border-radius:1px}
+.game-art .cartridge-title{position:relative;z-index:1;display:grid;place-items:center;width:100%;min-height:28px;padding:2px 1px;background:linear-gradient(145deg,#d8e3ed,#879cb2);color:#132944;text-align:center;font-size:7px;line-height:1.1;font-weight:1000;text-shadow:0 1px #fff8;overflow-wrap:anywhere}
+.game-art i{top:auto;right:4px;bottom:2px;z-index:1;font-size:6px;line-height:1;color:#e6e9ed;font-style:normal;letter-spacing:.12em}
+.snow-art{background:linear-gradient(160deg,#e5e9f0 0%,#657db0 22%,#273e70 23%,#121d36 100%);border-color:#9aa9c1}
+.snow-art .cartridge-title{background:linear-gradient(145deg,#ecf0fa,#98b0e4);color:#17254b;font-size:7px}
+.mines-art{background:linear-gradient(160deg,#e2e7ed 0%,#67947e 22%,#214b43 23%,#122721 100%);border-color:#8cae9e}
+.mines-art .cartridge-title{background:linear-gradient(145deg,#e2f0e7,#93c3a5);color:#173a2b;font-size:6px}
+.game-entry-copy{gap:4px}
+.game-entry-copy strong{font-size:10px;line-height:1.25}
+.game-entry-copy small,.game-entry-copy em{font-size:9px;line-height:1.35}
+.player-column{padding-inline:clamp(14px,2vw,34px)}
+.stage{height:clamp(430px,66vh,880px);max-height:calc(100dvh - 210px);min-height:380px}
+.screen-surround{width:min(99%,calc((100dvh - 325px)*1.43));max-width:none;max-height:calc(100% - 52px);aspect-ratio:10/7;padding:clamp(8px,1.2vw,17px)}
+.screen-slot{border:2px solid #293b51;border-radius:3px}
+.stage-corner{font-size:8px}
+
+/* Friendlier two-choice netplay flow */
+.netplay-panel{border-color:#2b3b52;background:linear-gradient(150deg,#121d2b,#0d141e)}
+.netplay-content{gap:12px}
+.netplay-explainer{font-size:11px;max-width:76ch}
+.netplay-choice{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.netplay-choice .button{justify-content:flex-start;text-align:left;white-space:normal;min-height:70px;padding:12px;background:#182536}
+.netplay-choice .button.primary{background:linear-gradient(135deg,#386fe5,#2854b9)}
+.netplay-choice .button>span:last-child{display:flex;flex-direction:column;gap:5px}
+.netplay-choice strong{font-size:12px}
+.netplay-choice small{font-size:10px;font-weight:500;opacity:.82}
+.choice-icon{font-size:22px;font-weight:500;min-width:26px;text-align:center}
+.netplay-flow{display:flex;flex-direction:column;gap:10px;padding:12px;border:1px solid #2b3d55;border-radius:10px;background:#0b121c}
+.netplay-step-heading{display:flex;align-items:flex-start;gap:10px}
+.step-number{width:29px;height:29px;border-radius:50%;display:grid;place-items:center;flex:none;background:#2d5ecc;color:#fff;font-weight:900}
+.netplay-step-heading strong{font-size:12px}
+.netplay-step-heading p{margin:4px 0 0;color:#9aaac0;font-size:10px;line-height:1.5}
+.netplay-label{font-size:11px;margin-bottom:6px}
+.netplay-code{font-size:11px;min-height:68px;resize:vertical}
+.netplay-primary-action{align-self:flex-start;min-width:180px}
+.netplay-output-wrap{display:flex;flex-direction:column;gap:7px}
+.netplay-output-row .netplay-label{flex:1}
+.netplay-start{align-self:flex-start}
+.netplay-warning{font-size:10px}
+
+/* Classic six-button Sega-style controller shell */
+.touch-controls{width:min(100%,720px);display:flex;flex-direction:column;gap:5px;margin:14px auto 0;padding:0 0 4px}
+.controller-shell{width:100%;min-height:155px;display:flex;align-items:center;justify-content:space-between;gap:clamp(12px,4vw,46px);padding:17px clamp(14px,4vw,36px) 15px;background:linear-gradient(165deg,#303943 0%,#1d252d 48%,#121920 100%);border:2px solid #424d59;border-radius:29px 29px 42px 42px;box-shadow:inset 0 2px 0 #ffffff16,inset 0 -6px 0 #0005,0 7px 17px #0005;position:relative}
+.controller-shell:before{content:"";position:absolute;left:17%;right:17%;top:5px;height:1px;background:#8994a126}
+.dpad{width:118px;height:118px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:0;flex:none;filter:drop-shadow(0 3px 0 #060a0f)}
+.pad-button{display:grid;place-items:center;touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;box-shadow:none;font-size:14px;transition:background .08s,transform .08s}
+.dpad .pad-button{border:1px solid #070b10;border-radius:3px;background:linear-gradient(145deg,#39434e,#212a34);color:#b8c1c9;font-size:16px}
+.dpad-up{grid-area:1/2;border-radius:5px 5px 0 0!important}
+.dpad-left{grid-area:2/1;border-radius:5px 0 0 5px!important}
+.dpad-right{grid-area:2/3;border-radius:0 5px 5px 0!important}
+.dpad-down{grid-area:3/2;border-radius:0 0 5px 5px!important}
+.dpad:after{content:"";grid-area:2/2;background:linear-gradient(145deg,#39434e,#212a34);border-block:1px solid #070b10}
+.controller-center{display:flex;flex:1;min-width:88px;flex-direction:column;align-items:center;gap:17px}
+.controller-wordmark{color:#929da8;font-size:10px;font-weight:1000;letter-spacing:.17em;text-align:center;text-shadow:0 1px #000}
+.utility-buttons{display:flex;align-items:center;gap:10px}
+.utility-buttons .pad-button{height:22px;min-width:47px;padding:0 8px;border:1px solid #070b10;border-radius:12px;background:linear-gradient(180deg,#58616a,#252d34);color:#aeb6be;font-size:8px;letter-spacing:.08em;transform:rotate(-16deg);box-shadow:0 2px 0 #080c10}
+.utility-buttons .start-button{transform:rotate(-16deg);min-width:51px}
+.action-pad{width:190px;height:112px;display:grid;grid-template:repeat(2,1fr)/repeat(3,1fr);gap:9px 6px;flex:none;position:relative}
+.face-button{width:40px;height:40px;justify-self:center;align-self:center;border:1px solid #a12c35;border-radius:50%;background:linear-gradient(145deg,#f05a61,#b82130);color:#ffe7e9;font-size:13px;font-weight:1000;box-shadow:0 4px 0 #650f1a, inset 0 2px 2px #ffffff55}
+.face-button:active,.face-button.is-held{background:linear-gradient(145deg,#ff8b91,#d62c3e);box-shadow:0 1px 0 #650f1a,inset 0 2px 2px #ffffff55;transform:translateY(3px)}
+.face-x{grid-area:1/1}.face-y{grid-area:1/2}.face-z{grid-area:1/3}.face-a{grid-area:2/1}.face-b{grid-area:2/2}.face-c{grid-area:2/3}
+.pad-button:active,.pad-button.is-held{background:#435d78;color:#fff;box-shadow:0 1px 0 #09101b;transform:translateY(2px)}
+.dpad .pad-button:active,.dpad .pad-button.is-held{background:#596b7d;color:#fff;box-shadow:inset 0 2px 4px #0009}
+.utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{background:#71808c;transform:rotate(-16deg) translateY(2px)}
+.touch-hint{margin:0;color:#7e8da2;text-align:center;font-size:9px;line-height:1.4}
+
+@media (min-width:1500px){.workspace{grid-template-columns:300px minmax(0,1fr)}.stage{height:clamp(500px,68vh,920px)}.screen-surround{width:min(99%,calc((100dvh - 310px)*1.43))}}
+@media (max-width:900px){.workspace{grid-template-columns:220px minmax(0,1fr)}.player-column{padding:15px 14px}.stage{height:clamp(360px,54vh,620px);max-height:none;min-height:330px}.screen-surround{width:min(99%,calc((100dvh - 295px)*1.43));padding:8px}.controller-shell{gap:14px;padding-inline:14px}.dpad{width:100px;height:100px}.action-pad{width:150px;height:96px;gap:5px 2px}.face-button{width:34px;height:34px}}
+@media (max-width:700px){
+  .topbar{height:58px;min-height:58px;gap:7px;padding:0 9px}
+  .brand-mark{width:35px;height:32px;font-size:8px;flex:none}
+  .brand-title{font-size:clamp(8px,2.4vw,11px);letter-spacing:.01em;white-space:normal;line-height:1.1;max-width:195px}
+  .brand-subtitle{display:none}
+  .language-picker{gap:0;font-size:0}
+  .language-picker select{width:83px;max-width:83px;padding:7px 3px;font-size:10px}
+  .topbar-actions{gap:5px}
+  .topbar-actions .button{padding:8px 9px;font-size:11px}
+  .topbar-actions #load-rom span{display:none}
+  .topbar-actions .icon-button{width:32px;min-width:32px}
+  .workspace{display:flex;flex-direction:column}
+  .sidebar{order:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto auto;gap:7px 8px;padding:10px 11px 11px;border-right:0;border-bottom:1px solid var(--border)}
+  .sidebar-heading{grid-column:1/-1;padding:0 2px;font-size:12px}
+  .search-box{grid-column:1/-1;height:31px}
+  .library-label{display:none}
+  #bundled-game,#homebrew-game,#rangers-game,#sf2-game{grid-row:3;display:flex;flex-direction:column;justify-content:flex-start;align-items:stretch;gap:7px;min-width:0;min-height:0;height:124px;padding:7px;border:1px solid #2a3b51;border-radius:9px}
+  #bundled-game{grid-column:1}
+  #homebrew-game{grid-column:2}
+  #rangers-game{grid-column:1}
+  #sf2-game{grid-column:2}
+  .game-art{width:100%;height:59px;clip-path:polygon(5% 0,95% 0,100% 14%,94% 22%,94% 100%,6% 100%,6% 22%,0 14%);padding-top:8px;border-radius:4px}
+  .game-art .cartridge-stamp{font-size:5px;margin-bottom:3px;width:70px;max-width:78%}
+  .game-art .cartridge-title{font-size:6px;min-height:18px;width:min(90%,140px)}
+  .game-art i{right:4px;bottom:2px}
+  .game-entry-copy{gap:2px}
+  .game-entry-copy strong{font-size:9px;line-height:1.15;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .game-entry-copy small{font-size:8px}
+  .game-entry-copy em,.entry-arrow,.recent-label,.recent-list,.sidebar-note,.credits,.sidebar-spacer{display:none}
+  .player-column{order:1;padding:12px 10px 14px}
+  .player-heading{gap:8px;padding-bottom:8px}
+  .player-heading h1{font-size:15px;line-height:1.15;margin-top:3px}
+  .eyebrow{font-size:8px;letter-spacing:.11em}
+  .status-pill{font-size:8px;padding:5px 7px;max-width:120px;overflow:hidden;text-overflow:ellipsis}
+  .stage{flex:none;width:100%;height:clamp(275px,39vh,390px);min-height:275px;max-height:none;border-radius:8px}
+  .screen-surround{width:min(99%,calc((100dvh - 530px)*1.43));max-width:99%;max-height:calc(100% - 44px);aspect-ratio:10/7;padding:6px;border-radius:7px}
+  .stage-corner{font-size:6px;letter-spacing:.06em}
+  .stage-corner.top-left{top:8px;left:8px}.stage-corner.bottom-left{bottom:8px;left:8px}.stage-corner.bottom-right{bottom:8px;right:8px}
+  .transport-bar{flex-direction:row;align-items:center;gap:6px;padding:8px 0 4px;flex-wrap:wrap}
+  .transport-buttons{gap:4px}
+  .transport-buttons .button{font-size:9px;padding:7px 8px;gap:4px}
+  .controller-status{font-size:8px;gap:4px}
+  .controller-icon{width:20px;height:20px}
+  .message-line{font-size:9px;line-height:1.4;min-height:15px;padding-top:3px}
+  .touch-controls{width:100%;margin-top:11px;gap:5px}
+  .controller-shell{min-height:124px;width:100%;gap:8px;padding:12px 9px 10px;border-radius:22px 22px 29px 29px}
+  .dpad{width:clamp(76px,23vw,98px);height:clamp(76px,23vw,98px)}
+  .dpad .pad-button{font-size:14px}
+  .controller-center{min-width:50px;gap:14px}
+  .controller-wordmark{font-size:7px;letter-spacing:.08em;white-space:nowrap}
+  .utility-buttons{gap:5px;flex-direction:column}
+  .utility-buttons .pad-button{height:20px;min-width:45px;font-size:7px;transform:rotate(-12deg)}
+  .utility-buttons .start-button{transform:rotate(-12deg)}
+  .utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{transform:rotate(-12deg) translateY(2px)}
+  .action-pad{width:clamp(111px,35vw,150px);height:91px;gap:5px 1px}
+  .face-button{width:clamp(30px,9vw,36px);height:clamp(30px,9vw,36px);font-size:11px}
+  .touch-hint{font-size:8px}
+  .player-footer{font-size:8px;flex-direction:column;gap:3px;margin-top:9px}
+  .netplay-panel{margin-top:10px}
+  .netplay-panel>summary{padding:10px;gap:6px}
+  .netplay-panel>summary strong{font-size:11px}
+  .netplay-panel>summary small{font-size:9px}
+  .netplay-state{font-size:8px;padding:4px 6px}
+  .netplay-content{padding:10px;gap:10px}
+  .netplay-choice{grid-template-columns:1fr}
+  .netplay-choice .button{min-height:58px;padding:10px}
+  .netplay-choice strong{font-size:11px}
+  .netplay-flow{padding:9px}
+  .netplay-code{font-size:10px;min-height:62px}
+  .netplay-primary-action{width:100%;min-width:0;min-height:42px;justify-content:center}
+  .netplay-start{width:100%;justify-content:center}
+  .settings-header{padding:14px}.settings-content{padding:13px}
+}
+@media (max-width:370px){
+  .brand-title{font-size:8px;max-width:140px}
+  .brand-mark{width:31px}
+  .language-picker select{width:72px;max-width:72px}
+  .topbar-actions .button{padding:7px}
+  .controller-shell{gap:5px;padding-inline:6px}
+  .controller-center{min-width:42px}
+  .action-pad{width:105px;height:82px}
+  .face-button{width:29px;height:29px}
+  .dpad{width:73px;height:73px}
+}
+
+.brand-title{text-transform:none}.netplay-disconnect:disabled{display:none}.action-pad .face-button:active,.action-pad .face-button.is-held{background:linear-gradient(145deg,#ff8b91,#d62c3e);box-shadow:0 1px 0 #650f1a,inset 0 2px 2px #ffffff55;transform:translateY(3px)}
+
+/* v1.3 — base style retained for compatibility */
+*[hidden]{display:none!important}
+
+/* Real-cartridge silhouette: horizontal smoky shell, bevels and a wide front label. */
+.game-art{
+  width:86px;height:58px;min-width:86px;flex:none;display:block;position:relative;overflow:hidden;
+  padding:0;border:1px solid #7f8791;border-radius:5px 5px 7px 7px;clip-path:none;
+  background:linear-gradient(180deg,#b5bbc1 0%,#696f77 7%,#272d35 16%,#171c23 100%);
+  color:#eef4ff;box-shadow:inset 0 1px 1px #ffffff9c,inset 0 -6px 0 #0008,0 3px 0 #05070a,0 5px 6px #0005;
+}
+.game-art:before{content:"";position:absolute;inset:4px 4px 5px;border:1px solid #bfc6cd56;border-radius:3px;background:linear-gradient(90deg,#ffffff09,#00000013);box-shadow:inset 0 0 0 1px #0005;pointer-events:none}
+.game-art .cartridge-side{position:absolute;z-index:2;left:6px;top:8px;bottom:8px;width:12px;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);background:linear-gradient(90deg,#17447b,#2c75ca);border:1px solid #78a7df77;color:#f1f6ff;font-size:5px;line-height:1;font-weight:1000;letter-spacing:.13em;text-shadow:0 1px 1px #001126}
+.game-art .cartridge-stamp{position:absolute;z-index:2;top:7px;left:21px;right:6px;height:10px;display:grid;place-items:center;margin:0;padding:0;background:linear-gradient(180deg,#dfe5eb,#a4afba);color:#1a2530;border:1px solid #f1f5fa7a;border-radius:1px;font-size:5px;line-height:1;font-weight:1000;letter-spacing:.13em}
+.game-art .cartridge-title{position:absolute;z-index:1;top:19px;left:21px;right:6px;bottom:11px;min-height:0;width:auto;display:flex;align-items:center;justify-content:center;padding:0 2px;overflow:hidden;border:1px solid #dbe4ee66;border-radius:1px;background:radial-gradient(ellipse at 22% 24%,#d6e7ff 0 8%,transparent 10%),radial-gradient(ellipse at 76% 35%,#e8c9a4 0 9%,transparent 11%),linear-gradient(145deg,#4c7bd2 0%,#17345b 55%,#0a1524 100%);color:#fff;font-size:7px;line-height:1.05;font-weight:1000;letter-spacing:.01em;text-align:center;text-shadow:0 1px 2px #000;overflow-wrap:anywhere}
+.game-art .cartridge-copy{position:absolute;z-index:2;right:7px;bottom:4px;color:#d4dce5;font-size:4px;line-height:1;letter-spacing:.13em;font-weight:900}
+.game-art i{position:absolute;z-index:3;top:auto;right:5px;bottom:3px;color:#fff;font-size:5px;font-weight:1000;line-height:1;font-style:normal;letter-spacing:.08em}
+.snow-art{border-color:#9da6b0;background:linear-gradient(180deg,#c7cbd0 0%,#777e87 8%,#272d35 17%,#151b22 100%)}
+.snow-art .cartridge-title{background:radial-gradient(ellipse at 28% 24%,#f7fbff 0 7%,transparent 10%),radial-gradient(ellipse at 70% 22%,#bfdef9 0 9%,transparent 11%),linear-gradient(150deg,#8bc7fa 0%,#4d87d1 42%,#1b3867 68%,#0b1428 100%)}
+.mines-art .cartridge-side{background:linear-gradient(90deg,#1c5143,#43866a)}
+.mines-art .cartridge-title{background:radial-gradient(circle at 25% 30%,#c1edba 0 8%,transparent 10%),radial-gradient(circle at 71% 27%,#f3d875 0 8%,transparent 10%),linear-gradient(150deg,#69b789,#21634d 58%,#123126)}
+
+/* Use all available central stage space. Keep the Genesis frame ratio without an undersized bezel. */
+.stage{min-height:360px;height:clamp(440px,68vh,900px);max-height:calc(100dvh - 195px);padding:0}
+.screen-surround{width:calc(100% - 34px);height:calc(100% - 46px);max-width:none;max-height:none;aspect-ratio:auto;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
+.screen-slot{width:100%;height:100%;border:0;border-radius:0;background:#030507;box-shadow:none;overflow:hidden}
+.screen-slot canvas{max-width:100%;max-height:100%;image-rendering:pixelated;image-rendering:crisp-edges}
+.stage:fullscreen{width:100vw;height:100dvh;max-height:none;min-height:0;border:0;border-radius:0}
+.stage:fullscreen .screen-surround{width:calc(100% - 42px);height:calc(100% - 52px);max-width:none;max-height:none;padding:0}
+
+/* Six-button SEGA-style pad: sculpted body, round D-pad bezel and staggered face buttons. */
+.touch-controls{width:min(100%,760px);margin:15px auto 0;gap:6px}
+.controller-shell{
+  width:100%;max-width:760px;min-height:184px;height:184px;position:relative;isolation:isolate;overflow:visible;
+  display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,3.7vw,40px);
+  padding:17px clamp(20px,5vw,54px) 22px;border:0;border-radius:0;
+  background:linear-gradient(180deg,#3e444c 0%,#292f37 23%,#171c23 66%,#0c1015 100%);
+  clip-path:polygon(2% 28%,5% 16%,15% 8%,29% 6%,40% 15%,60% 15%,71% 6%,85% 8%,95% 16%,98% 28%,100% 62%,94% 83%,83% 95%,72% 90%,63% 81%,37% 81%,28% 90%,17% 95%,6% 83%,0 62%);
+  box-shadow:inset 0 2px 0 #ffffff22,inset 0 -9px 0 #0008,0 9px 18px #0007;
+}
+.controller-shell:before{content:"";position:absolute;z-index:-1;inset:3px 2px 7px;clip-path:inherit;border:1px solid #7f8996;background:linear-gradient(180deg,#4a525d,#171c23 54%,#0b0f14);pointer-events:none}
+.controller-shell:after{content:"";position:absolute;z-index:-1;left:31%;right:31%;top:23%;height:1px;background:#cbd2dc18;box-shadow:0 3px 0 #0003;pointer-events:none}
+.dpad{width:124px;height:124px;display:grid;grid-template:repeat(3,1fr)/repeat(3,1fr);gap:0;flex:none;padding:9px;border-radius:50%;background:radial-gradient(circle at 40% 30%,#414954,#222830 62%,#11151a);box-shadow:inset 0 2px 3px #000c,0 2px 3px #0009;filter:none}
+.dpad:after{background:linear-gradient(145deg,#424a55,#20262d);border-block:1px solid #080b0f;border-left:1px solid #080b0f;border-right:1px solid #080b0f}
+.dpad .pad-button{background:linear-gradient(145deg,#3c444f,#20262e);border:1px solid #090c11;color:#bbc4ce;font-size:15px;text-shadow:0 1px 1px #000;box-shadow:inset 0 1px 1px #ffffff16}
+.dpad-up{border-radius:5px 5px 0 0!important}.dpad-left{border-radius:5px 0 0 5px!important}.dpad-right{border-radius:0 5px 5px 0!important}.dpad-down{border-radius:0 0 5px 5px!important}
+.dpad .pad-button:active,.dpad .pad-button.is-held{background:linear-gradient(145deg,#59636f,#303841);color:#fff;box-shadow:inset 0 2px 5px #000b}
+.controller-center{display:flex;flex:1;min-width:82px;flex-direction:column;align-items:center;justify-content:center;gap:21px;align-self:center}
+.controller-wordmark{color:#c4cad1;font-size:13px;font-weight:1000;letter-spacing:.14em;text-align:center;font-style:italic;text-shadow:0 2px #000,0 0 4px #fff2}
+.utility-buttons{display:flex;align-items:center;justify-content:center;gap:9px}
+.utility-buttons .pad-button{height:23px;min-width:49px;padding:0 8px;border:1px solid #080b10;border-radius:12px;background:linear-gradient(180deg,#767e87,#343b44 58%,#191e25);color:#e2e5e9;font-size:8px;font-weight:900;letter-spacing:.08em;transform:rotate(-17deg);box-shadow:0 2px 0 #05070a,inset 0 1px 1px #ffffff33}
+.utility-buttons .start-button{min-width:54px;background:linear-gradient(180deg,#858b93,#353b42 60%,#171b20)}
+.utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{background:linear-gradient(180deg,#a4aab2,#48505a);transform:rotate(-17deg) translateY(2px)}
+.action-pad{width:205px;height:128px;display:grid;grid-template:repeat(2,1fr)/repeat(3,1fr);gap:9px 8px;position:relative;flex:none;transform:rotate(-7deg)}
+.face-button{width:42px;height:42px;justify-self:center;align-self:center;border:1px solid #080b10;border-radius:50%;background:linear-gradient(145deg,#ed5962 0%,#c62f3c 60%,#7e1522 100%);color:#fff3f3;font-size:13px;font-weight:1000;text-shadow:0 1px 1px #74101b;box-shadow:0 4px 0 #07090d,inset 0 2px 2px #ffffff58,inset 0 -2px 2px #650e19}
+.face-x{grid-area:1/1}.face-y{grid-area:1/2}.face-z{grid-area:1/3}.face-a{grid-area:2/1}.face-b{grid-area:2/2}.face-c{grid-area:2/3}
+.face-button:active,.face-button.is-held{background:linear-gradient(145deg,#ff9096,#df3546 60%,#8d1726);box-shadow:0 1px 0 #07090d,inset 0 2px 3px #ffffff65;transform:translateY(3px)}
+.pad-button:active,.pad-button.is-held{color:#fff}
+.touch-hint{font-size:10px;margin:0;color:#8494a8}
+.controller-shell.three-button-pad .action-pad{width:150px;height:72px;grid-template:1fr/repeat(3,1fr);gap:5px;transform:rotate(-7deg)}
+.controller-shell.three-button-pad .face-x,.controller-shell.three-button-pad .face-y,.controller-shell.three-button-pad .face-z{display:none}
+.controller-shell.three-button-pad .face-a{grid-area:1/1}.controller-shell.three-button-pad .face-b{grid-area:1/2}.controller-shell.three-button-pad .face-c{grid-area:1/3}
+.controller-shell.three-button-pad .face-button{width:39px;height:39px}
+.controller-shell.three-button-pad [data-action="mode"]{visibility:hidden}
+
+/* Netplay has one visible code field at a time: offer first, reply second. */
+.netplay-input-wrap,.netplay-output-wrap{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid #2d4666;border-radius:10px;background:linear-gradient(145deg,#111e2d,#0c131d)}
+.netplay-input-wrap[hidden],.netplay-output-wrap[hidden]{display:none!important}
+.netplay-input-wrap .netplay-label,.netplay-output-wrap .netplay-label{display:block;color:#d7e6fc;font-size:12px;line-height:1.45;font-weight:900}
+.netplay-output-row{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap}
+.netplay-output-row .netplay-label{flex:1;margin:0}
+.netplay-code{width:100%;min-height:84px;border:1px solid #354962;border-radius:8px;background:#060b12;color:#d8e6f7;padding:10px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:10px;line-height:1.4;overflow-wrap:anywhere}
+.netplay-primary-action,.netplay-next-step{min-height:42px;align-self:stretch;justify-content:center;white-space:normal}
+.netplay-next-step{background:#24354a}
+.netplay-step-heading{align-items:flex-start}
+.netplay-step-heading p{font-size:11px;line-height:1.55;color:#b1bfd1}
+.netplay-content{gap:12px}
+
+@media(min-width:1300px){.stage{height:clamp(520px,70vh,980px);max-height:calc(100dvh - 180px)}.screen-surround{width:calc(100% - 48px);height:calc(100% - 54px)}}
+@media(max-width:900px){.stage{height:clamp(380px,60vh,650px);max-height:none;min-height:340px}.screen-surround{width:calc(100% - 24px);height:calc(100% - 42px)}.controller-shell{height:166px;min-height:166px;gap:12px;padding-inline:5%}.dpad{width:108px;height:108px}.action-pad{width:168px;height:112px;gap:7px 5px}.face-button{width:37px;height:37px}}
+@media(max-width:700px){
+  .stage{height:clamp(300px,48vh,520px);min-height:300px;max-height:none}
+  .screen-surround{width:calc(100% - 18px);height:calc(100% - 35px)}
+  .game-art{width:100%;height:58px;min-width:0;max-width:none}
+  .game-art .cartridge-side{left:5px;top:7px;bottom:7px;width:12px;font-size:5px}
+  .game-art .cartridge-stamp{left:20px;right:5px;top:6px;height:9px;font-size:5px}
+  .game-art .cartridge-title{left:20px;right:5px;top:17px;bottom:10px;font-size:clamp(6px,1.6vw,8px)}
+  .game-art .cartridge-copy{font-size:4px}
+  .controller-shell{height:145px;min-height:145px;gap:6px;padding:11px 5% 17px;clip-path:polygon(2% 28%,5% 16%,15% 8%,29% 6%,40% 15%,60% 15%,71% 6%,85% 8%,95% 16%,98% 28%,100% 62%,94% 83%,83% 95%,72% 90%,63% 81%,37% 81%,28% 90%,17% 95%,6% 83%,0 62%)}
+  .dpad{width:clamp(72px,22vw,94px);height:clamp(72px,22vw,94px);padding:7px}
+  .dpad .pad-button{font-size:12px}
+  .controller-center{min-width:39px;gap:12px}
+  .controller-wordmark{font-size:clamp(7px,2vw,10px);letter-spacing:.06em}
+  .utility-buttons{gap:4px;flex-direction:column}
+  .utility-buttons .pad-button{height:17px;min-width:40px;padding:0 5px;font-size:6px;transform:rotate(-15deg)}
+  .utility-buttons .start-button{min-width:45px}
+  .utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{transform:rotate(-15deg) translateY(2px)}
+  .action-pad{width:clamp(106px,34vw,140px);height:89px;gap:5px 1px;transform:rotate(-7deg)}
+  .face-button{width:clamp(27px,8.5vw,34px);height:clamp(27px,8.5vw,34px);font-size:10px}
+  .controller-shell.three-button-pad .action-pad{width:clamp(100px,32vw,130px);height:65px}
+  .controller-shell.three-button-pad .face-button{width:clamp(27px,8.5vw,34px);height:clamp(27px,8.5vw,34px)}
+  .netplay-input-wrap,.netplay-output-wrap{padding:9px}
+  .netplay-input-wrap .netplay-label,.netplay-output-wrap .netplay-label{font-size:11px}
+  .netplay-code{min-height:70px;font-size:9px}
+  .netplay-primary-action,.netplay-next-step{width:100%;min-height:42px}
+}
+@media(max-width:370px){.controller-shell{padding-inline:4%;gap:4px}.dpad{width:69px;height:69px}.action-pad{width:102px;height:78px}.face-button{width:26px;height:26px}.controller-center{min-width:35px}.controller-wordmark{font-size:7px}.utility-buttons .pad-button{min-width:36px}.utility-buttons .start-button{min-width:40px}}
+/* Final hardware details follow the RB-SGA-011 reference: embossed graphite buttons and HOME/SELECT controls. */
+.game-art:after{content:"";position:absolute;z-index:3;left:20%;right:20%;top:2px;height:3px;border-radius:3px;background:linear-gradient(180deg,#d7dce1,#5e646c);box-shadow:0 1px 0 #0b0e12;pointer-events:none}
+.action-pad .face-button{background:linear-gradient(145deg,#62676e 0%,#42474e 54%,#252a30 100%);border-color:#11151a;color:#d6d9dd;text-shadow:0 1px 1px #111;box-shadow:0 4px 0 #07090c,inset 0 2px 2px #ffffff38,inset 0 -2px 2px #0008}
+.action-pad .face-button:active,.action-pad .face-button.is-held{background:linear-gradient(145deg,#858b92,#50565e 58%,#2d3238);box-shadow:0 1px 0 #07090c,inset 0 2px 3px #0007;transform:translateY(3px)}
+.utility-buttons{flex-direction:column;gap:7px}
+.utility-buttons .start-button{height:17px;min-width:66px;padding:0 10px;transform:none;border-radius:7px;background:linear-gradient(180deg,#8d939b,#545a62 60%,#252a30);color:#f1f3f5;font-size:8px;letter-spacing:.14em;box-shadow:0 2px 0 #080a0d,inset 0 1px 1px #ffffff48}
+.secondary-utility-buttons{display:flex;align-items:center;justify-content:center;gap:7px}
+.secondary-utility-buttons .pad-button{height:15px;min-width:34px;padding:0 5px;transform:none;border-radius:8px;background:linear-gradient(180deg,#747b83,#343a41 62%,#191d22);color:#c6cbd1;font-size:5px;letter-spacing:.04em;box-shadow:0 2px 0 #080a0d,inset 0 1px 1px #ffffff2a}
+.utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{transform:translateY(2px)}
+@media(max-width:700px){
+  .utility-buttons .start-button{height:15px;min-width:50px;padding:0 6px;font-size:6px}
+  .secondary-utility-buttons{gap:4px}
+  .secondary-utility-buttons .pad-button{height:13px;min-width:27px;padding:0 3px;font-size:4px}
+}
+/* Match the stage's own shape to the 320×224 Mega Drive image so the screen uses the whole black panel. */
+.stage{width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:10/7;flex:none}
+.screen-surround{width:calc(100% - 24px);height:calc(100% - 24px)}
+.stage:fullscreen{width:100vw;height:100dvh;min-height:0;max-height:none;aspect-ratio:auto}
+.stage:fullscreen .screen-surround{width:calc(100% - 28px);height:calc(100% - 28px)}
+@media(max-width:700px){.stage{width:100%;height:auto;min-height:0;max-height:none;aspect-ratio:10/7}.screen-surround{width:calc(100% - 14px);height:calc(100% - 14px)}}
+
+/* v1.4 — clearer cart carousel, visible mobile ROM import, variable-size touch controls and B branding */
+.brand-mark.sega-b-mark{display:grid;place-items:center;background:transparent;border:0;border-radius:0;box-shadow:none;transform:skewX(-8deg)}
+.brand-mark.sega-b-mark svg{display:block;width:35px;height:30px;filter:drop-shadow(0 2px 1px #001a50)}
+.stage-corner.top-right{top:14px;right:17px;left:auto;bottom:auto}
+.stage-b-mark{color:#168cff;line-height:1;transform:skewX(-8deg)}
+.stage-b-mark svg{display:block;width:25px;height:22px;filter:drop-shadow(0 2px 1px #001a50)}
+
+.cartridge-carousel{display:grid;grid-template-columns:30px minmax(0,1fr) 30px;gap:7px;align-items:stretch;min-width:0}
+.cartridge-carousel-content{min-width:0;display:flex;flex-direction:column;gap:6px}
+.cartridge-carousel-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 3px;color:#8da0b8;font-size:9px;font-weight:900;letter-spacing:.14em}
+#cartridge-position{padding:3px 6px;border-radius:4px;background:#202b39;color:#d1d9e4;letter-spacing:.04em;white-space:nowrap}
+.cartridge-nav-button{align-self:stretch;display:grid;place-items:center;min-width:0;width:30px;min-height:75px;padding:0;border:1px solid #38485d;border-radius:9px;background:linear-gradient(180deg,#202c3b,#111720);color:#eaf2fc;font-family:Arial,sans-serif;font-size:27px;font-weight:500;cursor:pointer;box-shadow:inset 0 1px #ffffff0d,0 3px 8px #0004;transition:background .15s,border-color .15s,transform .15s}
+.cartridge-nav-button:hover{background:#2b3b50;border-color:#6584ad}
+.cartridge-nav-button:active{transform:scale(.96)}
+.cartridge-carousel .game-entry{display:flex;width:100%;align-items:center;gap:10px;min-width:0;padding:10px 8px;border:1px solid #303c4d;border-radius:10px;background:linear-gradient(150deg,#121820,#080b10);box-shadow:inset 0 1px #ffffff08,0 5px 13px #0003}
+.cartridge-carousel .game-entry.selected{border-color:#4f78b8;background:linear-gradient(145deg,#162235,#090d14);box-shadow:0 0 0 1px #2b5a9a44,inset 0 1px #ffffff0b}
+.cartridge-carousel .game-entry[hidden]{display:none!important}
+.cartridge-carousel .game-entry-copy{flex:1}
+.cartridge-carousel .game-entry-copy strong{font-size:11px;color:#f1f4f8}
+.cartridge-carousel .game-entry-copy small{font-size:9px}
+.cartridge-carousel .game-entry-copy em{font-size:9px;line-height:1.35}
+.cartridge-carousel-hint{margin:3px 2px 0;color:#687b94;font-size:9px;line-height:1.4}
+.game-art{width:98px;height:72px;min-width:98px;max-width:98px;overflow:hidden;position:relative;display:block;flex:none;background:#050607;border:2px solid #020303;border-radius:5px 5px 7px 7px;clip-path:none;box-shadow:inset 0 1px 0 #ffffff16,0 3px 5px #000b}
+.game-art:before{content:"";display:none}
+.game-art:after{left:21%;right:21%;top:2px;height:2px;background:#9da4ac;opacity:.75}
+.game-art .cartridge-side{left:2px;top:4px;bottom:4px;width:12px;writing-mode:vertical-rl;transform:rotate(180deg);display:flex;align-items:center;justify-content:center;background:linear-gradient(90deg,#07346e,#1769be);border:1px solid #4c8ed1;color:#dcecff;font-size:5px;letter-spacing:.08em;text-shadow:0 1px #00132d}
+.cartridge-label{position:absolute;inset:5px 5px 5px 17px;display:block;overflow:hidden;background:#10151b;border:1px solid #89919b;border-radius:1px;box-shadow:inset 0 0 0 2px #0008}
+.cartridge-label img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 44%}
+.cartridge-label .cover-fallback{display:none;position:absolute;inset:0;place-items:center;padding:4px;background:linear-gradient(140deg,#b5c5d2,#314b68 55%,#101821);color:#fff;text-shadow:0 2px 3px #000;font-size:8px;line-height:1.1;text-align:center;font-weight:1000}
+.cartridge-label.cover-missing .cover-fallback{display:grid}
+.cartridge-label .cover-fallback[hidden]{display:none}
+.cartridge-brand{position:absolute;right:5px;bottom:1px;z-index:5;font-size:5px;line-height:1;color:#e5e7e9;text-shadow:0 1px #000;letter-spacing:.1em;font-weight:1000}
+.mines-art .cartridge-side{background:linear-gradient(90deg,#174335,#2f715b);border-color:#6da58c}
+.mines-art .cartridge-label{background:#18332a;border-color:#7c9a89}
+.mines-art .cartridge-label img{object-fit:cover}
+.mobile-rom-loader{display:none}
+
+/* The mobile import option is explicit rather than only a small plus icon in the header. */
+.mobile-rom-loader-copy{display:flex;flex-direction:column;gap:4px;min-width:0}
+.mobile-rom-loader-copy strong{font-size:12px;color:#f1f5fa}
+.mobile-rom-loader-copy small{font-size:10px;line-height:1.4;color:#9baabe}
+.mobile-rom-loader .button{flex:none;min-height:40px;white-space:normal}
+
+/* A visible, persistent touch-size slider; values are saved in local settings. */
+.touch-controls{display:flex;flex-direction:column;align-items:stretch;gap:9px;width:min(100%,800px);margin:12px auto 0}
+.touch-size-control{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:9px 12px;border:1px solid #26364a;border-radius:9px;background:#101822}
+.touch-size-control label{display:flex;flex-direction:column;gap:3px;min-width:0}
+.touch-size-control label strong{font-size:11px;color:#d9e2ef}
+.touch-size-control label small{font-size:9px;color:#8192a8;line-height:1.3}
+.touch-size-slider{display:flex;align-items:center;gap:9px;min-width:min(50%,230px)}
+.touch-size-slider input{width:100%;min-width:75px;accent-color:#338bff;cursor:pointer}
+.touch-size-slider output{width:43px;text-align:right;color:#cfe4ff;font-size:11px;font-weight:800;font-variant-numeric:tabular-nums}
+.controller-shell{position:relative;display:grid;grid-template-columns:minmax(0,1fr) var(--controller-center-width,60px) minmax(0,1fr);align-items:center;justify-items:center;gap:clamp(4px,1.5vw,14px);width:100%;height:auto;min-height:var(--controller-height,170px);padding:12px clamp(8px,2.5vw,24px);clip-path:none;border-radius:28px 28px 36px 36px;background:linear-gradient(180deg,#20242a 0%,#111419 48%,#080a0d 100%);border:1px solid #30353b;box-shadow:inset 0 2px 2px #ffffff13,inset 0 -5px 12px #000c,0 8px 22px #0005}
+.controller-shell:before{content:"";position:absolute;inset:5px 13px 3px;border-radius:26px 26px 31px 31px;border:1px solid #ffffff09;pointer-events:none}
+.dpad{width:var(--dpad-size,116px);height:var(--dpad-size,116px);max-width:100%;max-height:100%;padding:7px;justify-self:start}
+.action-pad{width:var(--action-width,184px);max-width:100%;height:var(--action-height,118px);gap:5px 3px;transform:none;justify-self:end;grid-template:repeat(2,1fr)/repeat(3,minmax(0,1fr))}
+.face-button{width:var(--face-size,40px);height:var(--face-size,40px);max-width:100%;max-height:100%;font-size:clamp(10px,1.2vw,14px)}
+.controller-center{width:var(--controller-center-width,60px);min-width:0;max-width:100%;gap:clamp(8px,1.7vw,16px);grid-column:2}
+.controller-wordmark{font-size:clamp(8px,1vw,12px);color:#c8ced5}
+.utility-buttons{width:100%;gap:6px;flex-direction:column}
+.utility-buttons .start-button{width:var(--start-width,48px);min-width:0;max-width:100%;height:var(--utility-height,18px);padding:0 4px;transform:none;border-radius:6px;font-size:clamp(6px,.7vw,8px);letter-spacing:.06em;white-space:nowrap}
+.secondary-utility-buttons{display:flex;align-items:center;justify-content:center;gap:4px;width:100%}
+.secondary-utility-buttons .pad-button{width:var(--secondary-width,28px);min-width:0;max-width:100%;height:var(--secondary-utility-height,14px);padding:0 2px;transform:none;border-radius:7px;font-size:clamp(4px,.45vw,6px);white-space:nowrap}
+.utility-buttons .pad-button:active,.utility-buttons .pad-button.is-held{transform:translateY(2px)}
+.controller-shell.three-button-pad .action-pad{width:var(--action-width,184px);height:var(--action-height,118px);grid-template:1fr/repeat(3,minmax(0,1fr));gap:4px}
+.controller-shell.three-button-pad .face-button{width:var(--face-size,40px);height:var(--face-size,40px)}
+.controller-shell.three-button-pad [data-action="mode"]{visibility:hidden}
+.touch-hint{font-size:9px;line-height:1.35;text-align:center}
+
+@media(max-width:700px){
+  .brand-mark.sega-b-mark{width:30px;height:32px;flex:none}
+  .brand-mark.sega-b-mark svg{width:29px;height:27px}
+  .topbar-actions #load-rom span{display:none}
+  .topbar-actions #load-rom{padding:7px 8px;font-size:11px;max-width:40px;white-space:nowrap;line-height:1.1}
+  .sidebar{display:grid;grid-template-columns:1fr;grid-template-rows:auto auto auto auto;gap:8px;padding:10px 10px 12px}
+  .sidebar-heading{grid-column:1;padding-bottom:0}
+  .search-box{grid-column:1}
+  .cartridge-carousel{grid-column:1;grid-template-columns:34px minmax(0,1fr) 34px;gap:8px;align-items:stretch}
+  .cartridge-carousel-content{gap:6px}
+  .cartridge-carousel-meta{font-size:9px}
+  .cartridge-nav-button{width:34px;min-height:105px;font-size:30px}
+  .cartridge-carousel .game-entry{min-height:90px;padding:8px;gap:10px}
+  .game-art{width:112px;height:78px;min-width:112px;max-width:112px}
+  .cartridge-label img{object-position:center 45%}
+  .cartridge-carousel .game-entry-copy strong{font-size:11px}
+  .cartridge-carousel .game-entry-copy small,.cartridge-carousel .game-entry-copy em{font-size:9px}
+  .cartridge-carousel-hint{font-size:9px;margin-top:0}
+  .mobile-rom-loader{grid-column:1;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 10px;border:1px solid #2c4564;border-radius:10px;background:linear-gradient(120deg,#142236,#0b121c)}
+  .mobile-rom-loader .button{width:auto;max-width:48%;padding:8px 10px;font-size:10px}
+  .mobile-rom-loader-copy strong{font-size:11px}
+  .mobile-rom-loader-copy small{font-size:9px}
+  .sidebar .recent-label,.sidebar .recent-list,.sidebar .sidebar-note,.sidebar .credits,.sidebar .sidebar-spacer{display:none}
+  .player-column{padding:10px 9px 14px}
+  .stage{height:auto;min-height:0;max-height:none;aspect-ratio:10/7}
+  .screen-surround{width:calc(100% - 14px);height:calc(100% - 14px);max-height:none;max-width:none;aspect-ratio:auto;padding:5px}
+  .touch-controls{margin-top:10px;gap:7px}
+  .touch-size-control{padding:8px 9px;gap:10px}
+  .touch-size-control label strong{font-size:10px}
+  .touch-size-control label small{font-size:8px}
+  .touch-size-slider{min-width:42%;gap:6px}
+  .touch-size-slider input{min-width:50px}
+  .touch-size-slider output{font-size:10px;width:38px}
+  .controller-shell{grid-template-columns:minmax(0,1fr) var(--controller-center-width,40px) minmax(0,1fr);min-height:var(--controller-height,164px);padding:11px 8px;gap:4px;border-radius:23px 23px 29px 29px}
+  .dpad{justify-self:start}
+  .action-pad{justify-self:end;transform:none}
+  .controller-center{gap:9px}
+  .controller-wordmark{font-size:8px;letter-spacing:.06em}
+  .utility-buttons{gap:6px}
+  .utility-buttons .start-button{height:var(--utility-height,17px);width:var(--start-width,42px);min-width:0;font-size:6px;transform:none;letter-spacing:.03em}
+  .secondary-utility-buttons{gap:3px}
+  .secondary-utility-buttons .pad-button{height:var(--secondary-utility-height,13px);font-size:4px;letter-spacing:0}
+  .touch-hint{font-size:8px}
+}
+@media(max-width:370px){
+  .topbar{gap:4px;padding-inline:6px}
+  .brand-title{font-size:8px;max-width:114px}
+  .language-picker select{width:68px;max-width:68px}
+  .topbar-actions{gap:3px}
+  .topbar-actions #load-rom{max-width:86px;font-size:9px;padding:6px}
+  .cartridge-carousel{grid-template-columns:28px minmax(0,1fr) 28px;gap:5px}
+  .cartridge-nav-button{width:28px;min-height:95px}
+  .game-art{width:94px;height:72px;min-width:94px;max-width:94px}
+  .cartridge-carousel .game-entry{gap:7px;padding:7px 5px}
+  .mobile-rom-loader{gap:7px;padding:8px 7px}
+  .mobile-rom-loader .button{max-width:46%;font-size:9px;padding:7px 6px}
+  .controller-shell{grid-template-columns:minmax(0,1fr) 35px minmax(0,1fr);gap:3px;padding-inline:5px}
+  .touch-size-control label small{max-width:150px}
+}
+
+
+/* v1.4 final touch corrections: keep START compact and respect the size slider on every viewport. */
+.utility-buttons .start-button{width:var(--start-width,48px);min-width:0;max-width:100%;height:var(--utility-height,18px);padding:0 4px;transform:none;white-space:nowrap;letter-spacing:.06em}
+@media(max-width:700px){.utility-buttons .start-button{width:var(--start-width,42px);min-width:0;max-width:100%;height:var(--utility-height,17px);padding:0 3px;font-size:clamp(5px,.8vw,7px);letter-spacing:.01em}}
+@media(max-width:370px){.controller-center{min-width:0}.utility-buttons .start-button{width:var(--start-width,42px);min-width:0;padding:0 2px;font-size:5px}}
+
+/* v1.5 — mobile-only immersive play. The regular mobile controls remain in their normal place outside fullscreen. */
+body.mobile-game-fullscreen{overflow:hidden;overscroll-behavior:none;touch-action:manipulation}
+.stage.mobile-fullscreen-active{position:fixed!important;inset:0!important;z-index:99999!important;width:100vw!important;height:100dvh!important;min-height:0!important;max-height:none!important;aspect-ratio:auto!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;overflow:hidden!important;background:#000!important;box-shadow:none!important}
+.stage.mobile-fullscreen-active .screen-surround{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;aspect-ratio:auto!important;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)!important;border:0!important;border-radius:0!important;background:#000!important;box-shadow:none!important}
+.stage.mobile-fullscreen-active .screen-slot{width:100%!important;height:100%!important;border:0!important;background:#000!important;box-shadow:none!important}
+.stage.mobile-fullscreen-active .stage-corner{opacity:.35}
+.mobile-fullscreen-controls[hidden]{display:none!important}
+.mobile-fullscreen-controls{position:absolute;inset:0;z-index:8;pointer-events:none;overflow:hidden;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+.mobile-fullscreen-exit{position:absolute;top:max(10px,env(safe-area-inset-top));right:max(10px,env(safe-area-inset-right));z-index:3;width:34px;height:34px;border:1px solid #ffffff55;border-radius:50%;background:#070b13a8;color:#fff;font-size:24px;line-height:1;display:grid;place-items:center;pointer-events:auto;touch-action:manipulation;opacity:.7}
+.mobile-fullscreen-exit:active{opacity:1;background:#174b9b}
+.mobile-fs-size-slot{position:absolute;top:max(12px,calc(env(safe-area-inset-top) + 8px));left:50%;transform:translateX(-50%);width:min(76vw,390px);pointer-events:auto;opacity:.7}
+.mobile-fullscreen-controls .touch-size-control{display:flex;width:100%;gap:8px;padding:6px 9px;border:1px solid #ffffff30;border-radius:7px;background:#0509129c;box-shadow:none}
+.mobile-fullscreen-controls .touch-size-control label{gap:1px}
+.mobile-fullscreen-controls .touch-size-control label strong{font-size:10px;color:#fff}
+.mobile-fullscreen-controls .touch-size-control label small{display:none}
+.mobile-fullscreen-controls .touch-size-slider{min-width:95px;width:48%;gap:5px}
+.mobile-fullscreen-controls .touch-size-slider output{width:36px;color:#fff;font-size:10px}
+.mobile-fs-pad-slot{position:absolute;left:0;right:0;bottom:max(6px,env(safe-area-inset-bottom));display:flex;justify-content:center;align-items:flex-end;pointer-events:none}
+.mobile-fullscreen-controls .controller-shell{width:min(100%,820px)!important;max-width:820px!important;min-height:var(--controller-height,164px)!important;height:var(--controller-height,164px)!important;margin:0!important;padding:8px clamp(12px,4vw,36px)!important;gap:clamp(6px,2vw,25px)!important;border:0!important;border-radius:0!important;clip-path:none!important;background:transparent!important;box-shadow:none!important;opacity:.48;pointer-events:none}
+.mobile-fullscreen-controls .controller-shell:before,.mobile-fullscreen-controls .controller-shell:after{display:none!important}
+.mobile-fullscreen-controls .dpad{background:#03070b25!important;box-shadow:none!important;border:1px solid #ffffff18}
+.mobile-fullscreen-controls .dpad .pad-button{background:#050a1280!important;border-color:#ffffff50!important;color:#fff!important;box-shadow:none!important;opacity:.82}
+.mobile-fullscreen-controls .dpad .pad-button.is-held{background:#3c7fe4d9!important;opacity:1}
+.mobile-fullscreen-controls .action-pad{opacity:.95}
+.mobile-fullscreen-controls .action-pad .face-button{background:#050a1280!important;border-color:#ffffff65!important;color:#fff!important;box-shadow:none!important;opacity:.84}
+.mobile-fullscreen-controls .action-pad .face-button.is-held{background:#3c7fe4dc!important;opacity:1}
+.mobile-fullscreen-controls .controller-center{gap:10px}
+.mobile-fullscreen-controls .controller-wordmark{color:#ffffffa6;text-shadow:0 1px 2px #000;font-size:10px}
+.mobile-fullscreen-controls .utility-buttons .start-button{background:#087df0b8!important;border:1px solid #b9dcff99!important;color:#fff!important;box-shadow:none!important;opacity:.9}
+.mobile-fullscreen-controls .utility-buttons .secondary-utility-buttons .pad-button{background:#050a127b!important;border-color:#ffffff50!important;color:#fff!important;box-shadow:none!important}
+.mobile-fullscreen-controls .pad-button{touch-action:none}
+@media(max-width:700px){
+  .stage.mobile-fullscreen-active .screen-surround{width:100%!important;height:100%!important}
+  .mobile-fullscreen-controls .controller-shell{grid-template-columns:minmax(0,1fr) var(--controller-center-width,40px) minmax(0,1fr)!important}
+  .mobile-fullscreen-controls .dpad{width:var(--dpad-size,88px)!important;height:var(--dpad-size,88px)!important}
+  .mobile-fullscreen-controls .action-pad{width:var(--action-width,128px)!important;height:var(--action-height,86px)!important}
+  .mobile-fullscreen-controls .face-button{width:var(--face-size,34px)!important;height:var(--face-size,34px)!important;font-size:11px!important}
+  .mobile-fullscreen-controls .utility-buttons .start-button{height:24px!important;min-width:52px!important;padding:0 8px!important;font-size:8px!important;border-radius:12px!important}
+  .mobile-fullscreen-controls .secondary-utility-buttons .pad-button{height:17px!important;min-width:31px!important;font-size:5px!important}
+}
+@media(max-width:380px){
+  .mobile-fullscreen-controls .controller-shell{padding-inline:6px!important;gap:3px!important}
+  .mobile-fullscreen-controls .dpad{width:var(--dpad-size,82px)!important;height:var(--dpad-size,82px)!important}
+  .mobile-fullscreen-controls .action-pad{width:var(--action-width,115px)!important}
+  .mobile-fullscreen-controls .utility-buttons .start-button{min-width:45px!important}
+}
+
+/* The START key is blue, as in the familiar Mega Drive control colour scheme. */
+.utility-buttons .start-button{background:linear-gradient(180deg,#2e93ff 0%,#0868d5 62%,#07438e 100%)!important;border-color:#9ccfff!important;color:#fff!important;text-shadow:0 1px 1px #00336a;box-shadow:0 2px 0 #04162d,inset 0 1px 1px #ffffff55!important}
+.utility-buttons .start-button:active,.utility-buttons .start-button.is-held{background:linear-gradient(180deg,#69b5ff,#1478e4 65%,#084b9c)!important}
+.mobile-fullscreen-controls .utility-buttons .start-button{background:#087df0b8!important;box-shadow:none!important}
+.mobile-fullscreen-controls .pad-button{pointer-events:auto!important}
+
+/* When a phone cannot lock its physical orientation, rotate the fullscreen game stage into a landscape presentation. */
+@media (orientation:portrait) and (pointer:coarse){
+  .stage.mobile-fullscreen-active{inset:auto!important;left:50%!important;top:50%!important;right:auto!important;bottom:auto!important;width:100dvh!important;height:100vw!important;transform:translate(-50%,-50%) rotate(90deg)!important;transform-origin:center center!important}
+}
+
+/* v1.5 mobile comfort: avoid browser gestures intercepting pad touches and keep the slider wide in portrait fallback. */
+.controller-shell,.controller-shell *{-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.controller-shell .pad-button{touch-action:none}
+@media (orientation:portrait) and (pointer:coarse){
+  .mobile-fs-size-slot{width:min(76vh,390px)}
+}
+@media (pointer:coarse){
+  .mobile-fullscreen-controls .utility-buttons .start-button{height:24px!important;min-width:52px!important;padding:0 8px!important;font-size:8px!important;border-radius:12px!important}
+  .mobile-fullscreen-controls .dpad{width:var(--dpad-size,88px)!important;height:var(--dpad-size,88px)!important}
+  .mobile-fullscreen-controls .action-pad{width:var(--action-width,128px)!important;height:var(--action-height,86px)!important}
+  .mobile-fullscreen-controls .face-button{width:var(--face-size,34px)!important;height:var(--face-size,34px)!important}
+}
+
+/* v1.5 mobile library: center the selected cartridge instead of pinning the artwork to the left edge. */
+@media(max-width:700px){
+  .cartridge-carousel .game-entry{flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:148px;padding:11px 9px;text-align:center}
+  .cartridge-carousel .game-art{width:min(70%,148px);min-width:118px;max-width:148px;height:86px;margin-inline:auto;justify-self:center}
+  .cartridge-carousel .game-entry-copy{display:flex;width:100%;align-items:center;justify-content:center;text-align:center;gap:4px}
+  .cartridge-carousel .game-entry-copy strong,.cartridge-carousel .game-entry-copy small,.cartridge-carousel .game-entry-copy em{max-width:100%;text-align:center}
+  .cartridge-carousel .cartridge-nav-button{align-self:stretch}
+}
+@media(max-width:370px){
+  .cartridge-carousel .game-entry{min-height:140px;padding:8px 5px}
+  .cartridge-carousel .game-art{width:118px;min-width:118px;height:80px}
+}
+
+
+/* v1.7 — working 8-way arcade stick, Sonic vinyl artwork and compact fullscreen P2 signal. */
+/* Keep the retro POWER lamp and tuck a tiny Player 2 link indicator beside it only when immersive fullscreen is active. */
+.stage-mini-status{display:flex;align-items:center;gap:7px;padding:4px 6px;border:1px solid #ffffff12;border-radius:6px;background:#03070d45;backdrop-filter:blur(2px);line-height:1}
+.power-mini{display:inline-flex;align-items:center;gap:4px}
+.stage-mini-status #power-led{margin-left:1px;flex:none}
+.mini-status-separator{display:none;width:1px;height:10px;background:#a9bacf66}
+.fullscreen-player2-indicator{display:none;align-items:center;gap:4px;color:#8b9bb0;font-size:7px;letter-spacing:.07em}
+.fullscreen-player2-indicator strong{font-size:7px;font-weight:900}
+.mini-connection-signal{height:11px;display:flex;align-items:flex-end;gap:2px;padding:0 1px}
+.mini-connection-signal i{display:block;width:2px;border-radius:1px;background:#344354;height:3px}
+.mini-connection-signal i:nth-child(2){height:5px}.mini-connection-signal i:nth-child(3){height:7px}.mini-connection-signal i:nth-child(4){height:9px}.mini-connection-signal i:nth-child(5){height:11px}
+.fullscreen-player2-indicator[data-state="connected"]{color:#bfe9d4}
+.mini-connection-signal[data-level="1"] i:nth-child(-n+1),.mini-connection-signal[data-level="2"] i:nth-child(-n+2),.mini-connection-signal[data-level="3"] i:nth-child(-n+3),.mini-connection-signal[data-level="4"] i:nth-child(-n+4),.mini-connection-signal[data-level="5"] i:nth-child(-n+5){background:#64dca8;box-shadow:0 0 4px #64dca866}
+.fullscreen-player2-indicator[data-state="off"] .mini-connection-signal i{background:#374354;box-shadow:none}
+.stage:fullscreen .fullscreen-player2-indicator,.stage.mobile-fullscreen-active .fullscreen-player2-indicator{display:flex}
+.stage:fullscreen .mini-status-separator,.stage.mobile-fullscreen-active .mini-status-separator{display:block}
+.stage:fullscreen .stage-mini-status,.stage.mobile-fullscreen-active .stage-mini-status{opacity:.92;background:#03070d72;border-color:#ffffff24;z-index:12}
+.stage.mobile-fullscreen-active .stage-mini-status{top:max(10px,env(safe-area-inset-top));left:max(10px,env(safe-area-inset-left));font-size:7px}
+
+/* Arcade cabinet top panel with a local Sonic-inspired sticker/vinyl wrap. */
+.controller-shell.arcade-controller{isolation:isolate;border:3px solid #343b45;border-radius:18px;clip-path:none;background:linear-gradient(115deg,rgba(3,9,19,.36),rgba(4,10,22,.50)),url("./covers/arcade-vinyl-v1.10.svg") center/cover no-repeat;box-shadow:inset 0 2px 0 #ffffff2b,inset 0 -8px 14px #000b,0 8px 20px #0009;padding:15px clamp(18px,4vw,48px) 18px;overflow:hidden}
+.controller-shell.arcade-controller:before{content:"";position:absolute;inset:5px;border:1px solid #91dfff70;border-radius:11px;background:linear-gradient(115deg,#ffffff07,#00000017);z-index:-1;pointer-events:none}
+.controller-shell.arcade-controller:after{content:none!important;display:none!important}
+.controller-shell.arcade-controller .controller-wordmark{display:none!important}
+.controller-shell.arcade-controller .controller-center{flex:0 0 auto;min-width:0;width:auto;gap:8px;position:relative;z-index:3}
+.controller-shell.arcade-controller .utility-buttons{gap:7px;justify-content:center}
+.controller-shell.arcade-controller .dpad{position:relative;touch-action:none;border:7px solid #10141a;border-radius:50%;background:radial-gradient(circle at 35% 27%,#5f6c7d,#252e3c 61%,#070b12 74%);box-shadow:inset 0 0 0 2px #b7d0e4a1,inset 0 4px 10px #000d,0 3px 8px #000b;overflow:visible;z-index:2;cursor:grab}
+.controller-shell.arcade-controller .dpad:after{content:"";position:absolute;inset:7%;border-radius:50%;background:radial-gradient(circle,#596675 0%,#222d3b 56%,#111923 70%,#070b11 74%);border:2px solid #0a0d12;box-shadow:inset 0 2px 4px #000d;pointer-events:none;z-index:2}
+.controller-shell.arcade-controller .dpad .pad-button{z-index:1;position:relative;background:transparent!important;border:0!important;color:transparent!important;box-shadow:none!important;font-size:0!important;opacity:0!important;touch-action:none}
+.arcade-stick-hardware{display:none;position:absolute;inset:0;z-index:4;pointer-events:none;--stick-x:0px;--stick-y:0px;--stick-tilt:0deg}
+.arcade-stick-stem{position:absolute;left:calc(50% + var(--stick-x,0px));top:calc(50% + var(--stick-y,0px));width:13%;height:34%;transform:translateX(-50%) rotate(var(--stick-tilt,0deg));transform-origin:50% 0%;transition:left 75ms ease-out,top 75ms ease-out,transform 75ms ease-out;border-radius:9px;background:linear-gradient(90deg,#697584,#eef7ff 42%,#566170);box-shadow:0 2px 3px #000b}
+.arcade-stick-ball{position:absolute;left:calc(50% + var(--stick-x,0px));top:calc(50% + var(--stick-y,0px));width:42%;aspect-ratio:1;transform:translate(-50%,-50%);transition:left 75ms ease-out,top 75ms ease-out;border-radius:50%;background:radial-gradient(circle at 30% 25%,#343b47 0%,#05070b 32%,#000 74%,#252b36 100%);border:2px solid #070b11;box-shadow:0 4px 5px #000b,inset 0 2px 3px #ffffff66}
+.controller-shell.arcade-controller .arcade-stick-hardware{display:block}
+.controller-shell.arcade-controller .dpad:active{cursor:grabbing}
+.controller-shell.arcade-controller .action-pad{transform:none;gap:5px 8px;z-index:2}
+.controller-shell.arcade-controller .action-pad .face-button{border-radius:50%!important;width:var(--face-size,40px);height:var(--face-size,40px);border:2px solid #111720;box-shadow:0 4px 0 #05070a,inset 0 3px 4px #ffffff7a,inset 0 -4px 5px #0006;color:#10141a;text-shadow:0 1px #ffffff7a;font-size:clamp(10px,1.2vw,14px)}
+.controller-shell.arcade-controller .face-x{background:radial-gradient(circle at 35% 28%,#fff69a,#ffd12f 42%,#9c6600)!important}
+.controller-shell.arcade-controller .face-y{background:radial-gradient(circle at 35% 28%,#9fe3ff,#23a7ff 42%,#075d9c)!important}
+.controller-shell.arcade-controller .face-z{background:radial-gradient(circle at 35% 28%,#ffb0b0,#f33944 42%,#8b0913)!important}
+.controller-shell.arcade-controller .face-a{background:radial-gradient(circle at 35% 28%,#b6ffb6,#32cc65 42%,#08752b)!important}
+.controller-shell.arcade-controller .face-b{background:radial-gradient(circle at 35% 28%,#fff4a8,#f9bc27 42%,#986100)!important}
+.controller-shell.arcade-controller .face-c{background:radial-gradient(circle at 35% 28%,#edc4ff,#a55bff 42%,#50218d)!important}
+.controller-shell.arcade-controller .utility-buttons .start-button,.controller-shell.arcade-controller .utility-buttons .select-button{flex:none;width:36px!important;height:36px!important;min-width:36px!important;max-width:36px!important;padding:0!important;border-radius:50%!important;transform:none!important;display:grid;place-items:center;font-size:6px!important;letter-spacing:-.04em!important;line-height:1!important;white-space:normal;border:2px solid #a6d9ff!important;background:radial-gradient(circle at 35% 25%,#39a0ff,#0870d9 58%,#06458e)!important;color:#fff!important;text-shadow:0 1px 1px #00346b;box-shadow:0 3px 0 #04162d,inset 0 1px 2px #ffffff55!important}
+.controller-shell.arcade-controller .utility-buttons .start-button:active,.controller-shell.arcade-controller .utility-buttons .select-button:active,.controller-shell.arcade-controller .utility-buttons .is-held{transform:translateY(2px)!important;box-shadow:0 1px 0 #04162d,inset 0 1px 2px #ffffff55!important}
+.controller-shell.arcade-controller.three-button-pad .face-x,.controller-shell.arcade-controller.three-button-pad .face-y,.controller-shell.arcade-controller.three-button-pad .face-z{display:none}
+@media(max-width:700px){
+ .controller-shell.arcade-controller{border-radius:13px;padding:18px 9px 12px;gap:5px;background-size:auto 100%,cover}
+ .controller-shell.arcade-controller .dpad{border-width:5px}
+ .controller-shell.arcade-controller .action-pad{gap:4px 2px}
+ .controller-shell.arcade-controller .action-pad .face-button{font-size:10px}
+ .controller-shell.arcade-controller .controller-center{gap:5px}
+ .controller-shell.arcade-controller .utility-buttons{gap:4px}
+ .controller-shell.arcade-controller .utility-buttons .start-button,.controller-shell.arcade-controller .utility-buttons .select-button{width:29px!important;height:29px!important;min-width:29px!important;max-width:29px!important;font-size:5px!important}
+}
+/* Fullscreen-only phone layout: controls stay at the edges, START/SELECT sit above the D-pad, slider at bottom. */
+.mobile-fs-size-slot{top:auto!important;bottom:max(7px,env(safe-area-inset-bottom))!important;left:50%;transform:translateX(-50%);width:min(70vw,360px)!important;z-index:4}
+.mobile-fs-pad-slot{bottom:calc(max(7px,env(safe-area-inset-bottom)) + 43px)!important;left:0;right:0;z-index:2}
+.mobile-fullscreen-controls .controller-shell{height:var(--controller-height,164px)!important;min-height:var(--controller-height,164px)!important;position:relative!important;overflow:visible!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;align-items:end!important;gap:clamp(8px,4vw,35px)!important;padding:8px clamp(14px,4vw,35px)!important;}
+.mobile-fullscreen-controls .dpad{grid-column:1;grid-row:1;justify-self:start!important;align-self:end!important}
+.mobile-fullscreen-controls .action-pad{grid-column:2;grid-row:1;justify-self:end!important;align-self:end!important}
+.mobile-fullscreen-controls .controller-center{position:absolute!important;left:clamp(15px,7vw,60px)!important;bottom:calc(100% - 4px)!important;z-index:5;width:auto!important;min-width:0!important;max-width:none!important;display:flex!important;flex-direction:row!important;align-items:center!important;gap:8px!important;transform:none!important}
+.mobile-fullscreen-controls .controller-wordmark{display:none!important}
+.mobile-fullscreen-controls .utility-buttons{display:flex!important;flex-direction:row!important;align-items:center!important;gap:7px!important;width:auto!important}
+.mobile-fullscreen-controls .utility-buttons .start-button,.mobile-fullscreen-controls .utility-buttons .select-button{height:23px!important;min-width:55px!important;width:auto!important;padding:0 9px!important;font-size:8px!important;border-radius:12px!important;transform:none!important;background:linear-gradient(180deg,#39a0ff,#0655b6)!important;border-color:#9ecfff!important;box-shadow:0 2px 0 #04162d!important;color:#fff!important}
+.mobile-fullscreen-controls .secondary-utility-buttons{width:auto!important;gap:7px!important}
+.mobile-fullscreen-controls .secondary-utility-buttons .pad-button{min-width:55px!important;height:23px!important;font-size:8px!important}
+.mobile-fullscreen-controls .arcade-controller .controller-center{left:clamp(15px,7vw,60px)!important}
+@media(max-width:380px){
+ .mobile-fs-size-slot{width:min(76vw,320px)!important}
+ .mobile-fullscreen-controls .controller-shell{padding-inline:8px!important;gap:4px!important}
+ .mobile-fullscreen-controls .controller-center{left:10px!important;gap:5px!important}
+ .mobile-fullscreen-controls .utility-buttons{gap:5px!important}
+ .mobile-fullscreen-controls .utility-buttons .start-button,.mobile-fullscreen-controls .utility-buttons .select-button{min-width:48px!important;padding:0 6px!important;font-size:7px!important}
+}
+
+/* v1.7 refinements: joystick is an eight-way drag zone, with the ball and shaft moving together. */
+.controller-shell.arcade-controller .dpad .arcade-stick-hardware{pointer-events:none}
+.controller-shell.arcade-controller .dpad [data-action]{-webkit-tap-highlight-color:transparent}
+@media(max-width:380px){
+  .controller-shell.arcade-controller{padding-inline:7px!important;gap:4px!important}
+  .controller-shell.arcade-controller .dpad{width:var(--dpad-size,88px)!important;height:var(--dpad-size,88px)!important}
+  .controller-shell.arcade-controller .action-pad{width:var(--action-width,128px)!important;height:var(--action-height,86px)!important}
+  .controller-shell.arcade-controller .utility-buttons .start-button,.controller-shell.arcade-controller .utility-buttons .select-button{width:27px!important;height:27px!important;min-width:27px!important;max-width:27px!important}
+}
+
+/* In immersive fullscreen, allow the entire arcade stick disc to receive drags, not only its four transparent sectors. */
+.mobile-fullscreen-controls .controller-shell.arcade-controller .dpad{pointer-events:auto!important}
+
+
+/* v1.8 — preserve the v1.6 layout outside fullscreen; only fullscreen gets the compact P2 chip. */
+.stage-mini-status{
+  display:block;align-items:initial;gap:0;padding:0;border:0;border-radius:0;
+  background:transparent;backdrop-filter:none;line-height:normal;opacity:1
+}
+.stage-mini-status .power-mini{display:inline;align-items:initial;gap:0}
+.stage-mini-status #power-led{margin-left:5px;flex:none}
+.stage-mini-status .mini-status-separator{display:none}
+.stage .fullscreen-player2-indicator{display:none}
+.stage:fullscreen .stage-mini-status,
+.stage.mobile-fullscreen-active .stage-mini-status{
+  display:flex;align-items:center;gap:7px;padding:4px 6px;border:1px solid #ffffff24;
+  border-radius:6px;background:#03070d72;backdrop-filter:blur(2px);line-height:1;opacity:.92
+}
+.stage:fullscreen .stage-mini-status .power-mini,
+.stage.mobile-fullscreen-active .stage-mini-status .power-mini{display:inline-flex;align-items:center;gap:4px}
+.stage:fullscreen .stage-mini-status #power-led,
+.stage.mobile-fullscreen-active .stage-mini-status #power-led{margin-left:1px;flex:none}
+.stage:fullscreen .stage-mini-status .mini-status-separator,
+.stage.mobile-fullscreen-active .stage-mini-status .mini-status-separator{display:block}
+.stage:fullscreen .fullscreen-player2-indicator,
+.stage.mobile-fullscreen-active .fullscreen-player2-indicator{display:flex}
+
+/* Keep the joystick socket shadow exactly centered and distinct from the moving stick. */
+.controller-shell.arcade-controller .dpad:after{
+  content:"";position:absolute;left:50%;top:50%;width:48%;height:48%;inset:auto;
+  transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle at 45% 42%,#111822 0%,#080c12 58%,#020407 78%,#1c2631 100%);
+  border:2px solid #0a0d12;
+  box-shadow:0 0 0 4px #0a0d12,inset 0 3px 7px #000e,0 3px 6px #0009;
+  pointer-events:none;z-index:2
+}
+
+
+/* v1.9: clean cartridge entries (cover + title only) */
+.cartridge-carousel .game-entry-copy { display:flex; min-width:0; flex:1; align-items:flex-start; justify-content:center; gap:0; }
+.cartridge-carousel .game-entry-copy strong { display:block; max-width:100%; color:#f1f4f8; font-size:11px; line-height:1.25; font-weight:850; overflow-wrap:anywhere; }
+.cartridge-carousel .game-entry-copy small,
+.cartridge-carousel .game-entry-copy em { display:none !important; }
+
+/* v1.9: automatic WebRTC room setup */
+.netplay-auto-panel { display:flex; flex-direction:column; gap:10px; padding:13px; border:1px solid #30445d; border-radius:12px; background:linear-gradient(145deg,#111d2b,#0a1019); }
+.netplay-auto-heading { display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; color:#eef5ff; font-size:13px; }
+.netplay-auto-status { max-width:100%; border:1px solid #354860; border-radius:999px; padding:4px 8px; color:#a9bdd7; background:#0a111b; font-size:10px; line-height:1.2; }
+.netplay-auto-status[data-state="connected"] { color:#95e7b3; border-color:#2c7650; }
+.netplay-auto-status[data-state="error"] { color:#ffb0a8; border-color:#82453e; }
+.netplay-auto-intro { margin:0; color:#aab9cd; font-size:11px; line-height:1.55; }
+.netplay-auto-actions { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.2fr); gap:10px; align-items:end; }
+.netplay-auto-actions > .button { min-height:42px; justify-content:center; white-space:normal; }
+.netplay-auto-join { display:flex; flex-direction:column; gap:5px; min-width:0; }
+.netplay-auto-join label,.netplay-auto-room-share > div > span { color:#9cb0c8; font-size:10px; font-weight:800; }
+.netplay-auto-join > div { display:flex; gap:6px; min-width:0; }
+.netplay-room-input { width:100%; min-width:0; border:1px solid #344861; border-radius:8px; background:#070c13; color:#f3f7fc; padding:10px 11px; font:800 14px/1.2 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.12em; text-transform:uppercase; }
+.netplay-room-input:focus { outline:2px solid #3d85ef; outline-offset:1px; }
+.netplay-auto-room-share { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:8px 12px; padding:10px; border:1px dashed #4776aa; border-radius:9px; background:#0d1928; }
+.netplay-auto-room-share[hidden] { display:none !important; }
+.netplay-auto-room-share > div { display:flex; flex-direction:column; gap:5px; }
+.netplay-auto-room-share strong { color:#fff; font:900 22px/1 ui-monospace,SFMono-Regular,Consolas,monospace; letter-spacing:.18em; }
+.netplay-auto-room-share p { grid-column:1/-1; margin:0; color:#9cb0c8; font-size:10px; line-height:1.4; }
+.netplay-auto-start { align-self:flex-start; }
+.netplay-config-note { margin:0; padding:8px 9px; border-left:2px solid #b68139; background:#1e1a14; color:#d7bf99; font-size:10px; line-height:1.5; overflow-wrap:anywhere; }
+@media (max-width:700px) {
+  .netplay-auto-panel { padding:10px; gap:9px; }
+  .netplay-auto-actions { grid-template-columns:1fr; }
+  .netplay-auto-actions > .button { min-height:40px; }
+  .netplay-auto-room-share { grid-template-columns:1fr; }
+  .netplay-auto-room-share p { grid-column:auto; }
+  .netplay-auto-room-share strong { font-size:25px; }
+}
+
+
+/* v1.10: cartridge name above the art, without metadata beside the case. */
+.cartridge-carousel .game-entry {
+  display:flex !important; flex-direction:column !important; align-items:center !important;
+  justify-content:flex-start !important; gap:7px !important; min-height:148px !important;
+  padding:9px 5px 10px !important; text-align:center !important;
+}
+.cartridge-carousel .game-entry-copy {
+  order:-1; display:flex !important; flex:0 0 auto !important; width:100%; min-width:0;
+  align-items:center !important; justify-content:center !important; text-align:center !important; gap:0 !important;
+  min-height:24px;
+}
+.cartridge-carousel .game-entry-copy strong {
+  display:-webkit-box; width:100%; max-width:100%; overflow:hidden; overflow-wrap:anywhere;
+  -webkit-line-clamp:2; -webkit-box-orient:vertical; text-align:center; font-size:11px; line-height:1.2;
+}
+.cartridge-carousel .game-art {
+  flex:0 1 auto !important; width:min(100%,132px) !important; min-width:0 !important;
+  max-width:132px !important; height:96px !important; margin-inline:auto !important;
+}
+.cartridge-carousel .game-entry-copy small,
+.cartridge-carousel .game-entry-copy em { display:none !important; }
+
+/* v1.10: P2 status bar mirrors the fullscreen signal indicator in normal desktop view. */
+.player-status-group { display:flex; align-items:center; justify-content:flex-end; gap:8px; min-width:0; }
+.player2-indicator {
+  display:flex; align-items:center; justify-content:center; gap:6px; flex:none;
+  min-height:28px; padding:5px 8px; border:1px solid #2a3a50; border-radius:8px;
+  background:linear-gradient(145deg,#111b29,#0a1018); color:#8b9bb0; white-space:nowrap;
+}
+.player2-name { font-size:8px; line-height:1; letter-spacing:.08em; font-weight:900; }
+#player2-connection-text { min-width:24px; font-size:8px; line-height:1; font-weight:950; letter-spacing:.04em; }
+.player2-indicator[data-state="connected"] { border-color:#24513f; color:#bfe9d4; }
+.player2-indicator[data-state="off"] #player2-connection-text { color:#93a0b2; }
+.connection-signal { height:11px; display:flex; align-items:flex-end; gap:2px; padding:0 1px; }
+.connection-signal i { display:block; width:3px; border-radius:1px; background:#374354; box-shadow:none; }
+.connection-signal i:nth-child(1){height:3px}.connection-signal i:nth-child(2){height:5px}.connection-signal i:nth-child(3){height:7px}.connection-signal i:nth-child(4){height:9px}.connection-signal i:nth-child(5){height:11px}
+.connection-signal[data-level="1"] i:nth-child(-n+1),.connection-signal[data-level="2"] i:nth-child(-n+2),.connection-signal[data-level="3"] i:nth-child(-n+3),.connection-signal[data-level="4"] i:nth-child(-n+4),.connection-signal[data-level="5"] i:nth-child(-n+5){background:#64dca8;box-shadow:0 0 4px #64dca866}
+@media(max-width:720px){.player-status-group{gap:5px}.player2-indicator{gap:4px;min-height:25px;padding:4px 6px}.player2-name{font-size:7px}#player2-connection-text{font-size:7px;min-width:19px}.connection-signal i{width:2px}}
+
+.rangers-art{border-color:#c9a23a;background:linear-gradient(160deg,#f1e3b0 0%,#c0392b 22%,#6b1a1a 23%,#1d0c0c 100%)}
+.rangers-art .cartridge-side{background:linear-gradient(90deg,#7a1f1f,#d4483b);border-color:#e0a04a}
+.rangers-art .cartridge-label{background:#2a1010;border-color:#c9a23a}
+.rangers-art .cartridge-label img{object-fit:cover}
+.sf2-art{border-color:#c9a23a;background:linear-gradient(160deg,#f3e6a8 0%,#d9a21b 22%,#1f3f7a 23%,#0c1730 100%)}
+.sf2-art .cartridge-side{background:linear-gradient(90deg,#17356b,#3a6bc4);border-color:#e0b84a}
+.sf2-art .cartridge-label{background:#0f1c38;border-color:#c9a23a}
+.sf2-art .cartridge-label img{object-fit:cover}
+
+/* v1.13: portadas de cartucho completas (imagen local) en lugar del cartucho dibujado */
+.photo-art{background:transparent!important;border:0!important;box-shadow:none!important;clip-path:none!important;overflow:visible!important;padding:0!important}
+.photo-art:before,.photo-art:after{display:none!important}
+.photo-art .cartridge-label{inset:0;background:transparent;border:0;box-shadow:none;overflow:visible}
+.photo-art .cartridge-label img{object-fit:contain;object-position:center;filter:drop-shadow(0 3px 5px #000c)}
+
+/* v1.12: arcade stick — socket exactly centered (the classic pad's grid-area was displacing it), shaft grows from the socket center to the ball. */
+.controller-shell.arcade-controller .dpad:after{
+  content:"";grid-area:auto;position:absolute;inset:26%;width:auto;height:auto;margin:0;transform:none;box-sizing:border-box;
+  border-radius:50%;border:3px solid #0b0f15;
+  background:radial-gradient(circle at 50% 42%,#020406 0 52%,#0d141c 74%,#1d2834 100%);
+  box-shadow:0 0 0 3px #3b485a,0 0 0 6px #0a0d12,inset 0 5px 9px #000,inset 0 -2px 3px #ffffff1c;
+  pointer-events:none;z-index:2
+}
+.arcade-stick-stem{left:50%;top:50%;width:9%;height:var(--stick-len,0px);min-height:0;z-index:1;transform:translateX(-50%) rotate(var(--stick-angle,0deg));transform-origin:50% 0;transition:height 75ms ease-out,transform 75ms ease-out;border-radius:6px;background:linear-gradient(90deg,#5d6978,#f3f9ff 45%,#4c5766);box-shadow:0 1px 2px #000b}
+.arcade-stick-ball{left:calc(50% + var(--stick-x,0px));top:calc(50% + var(--stick-y,0px));width:38%;z-index:2;box-shadow:0 6px 7px #000c,inset 0 2px 3px #ffffff66}
+
+/* v1.12: mobile fullscreen — START/SELECT go to the left margin, outside the game image. */
+.mobile-fullscreen-controls .controller-shell .controller-center{grid-column:auto!important;grid-row:auto!important;left:max(8px,env(safe-area-inset-left))!important;right:auto!important;margin:0!important}
+.mobile-fullscreen-controls .controller-shell .controller-center .utility-buttons{flex-direction:column!important;align-items:flex-start!important;gap:6px!important}
+.mobile-fullscreen-controls .controller-shell .controller-center .secondary-utility-buttons{width:auto!important}
+.mobile-fullscreen-controls .controller-shell .controller-center .utility-buttons .start-button,
+.mobile-fullscreen-controls .controller-shell .controller-center .utility-buttons .select-button{min-width:50px!important}
+.mobile-fullscreen-controls .controller-shell.arcade-controller .controller-center .utility-buttons .start-button,
+.mobile-fullscreen-controls .controller-shell.arcade-controller .controller-center .utility-buttons .select-button{min-width:0!important}
+
+/* v1.15: full-screen mobile size slider moves to a slim vertical bar on the right edge so it never covers the gameplay area. */
+.mobile-fullscreen-controls .mobile-fs-size-slot{top:48px!important;bottom:auto!important;left:auto!important;right:10px!important;transform:none!important;width:34px!important;height:124px!important;z-index:4;opacity:.5;transition:opacity .15s}
+.mobile-fullscreen-controls .mobile-fs-size-slot:active,.mobile-fullscreen-controls .mobile-fs-size-slot:focus-within{opacity:.95}
+.mobile-fullscreen-controls .mobile-fs-size-slot .touch-size-control{position:relative;display:block!important;width:100%!important;height:100%;padding:0!important;gap:0!important;border:1px solid #ffffff30!important;border-radius:17px!important;background:#05091299!important}
+.mobile-fullscreen-controls .mobile-fs-size-slot .touch-size-control label{display:none!important}
+.mobile-fullscreen-controls .mobile-fs-size-slot .touch-size-slider{position:absolute;inset:0;display:block;width:100%!important;min-width:0!important}
+.mobile-fullscreen-controls .mobile-fs-size-slot .touch-size-slider input{position:absolute;left:50%;top:calc(50% - 6px);width:80px;min-width:0!important;height:26px;margin:0;transform:translate(-50%,-50%) rotate(-90deg);touch-action:none}
+.mobile-fullscreen-controls .mobile-fs-size-slot .touch-size-slider output{position:absolute;left:0;right:0;bottom:5px;width:auto!important;text-align:center!important;font-size:8px!important;color:#fff}
+
+/* v1.15: full library button and dialog. */
+.full-library-button{width:100%;justify-content:center;gap:7px;margin-top:2px}
+.library-dialog{width:min(760px,calc(100% - 22px))}
+.library-grid{padding:16px 18px 20px;overflow:auto;max-height:calc(90vh - 90px);display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.library-tile{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 8px;border:1px solid #303c4d;border-radius:10px;background:linear-gradient(150deg,#121820,#080b10);cursor:pointer;text-align:center;min-width:0}
+.library-tile:hover{border-color:#4f78b8}
+.library-tile.selected{border-color:#4f78b8;background:linear-gradient(145deg,#162235,#090d14);box-shadow:0 0 0 1px #2b5a9a44}
+.library-tile-art{display:flex;align-items:center;justify-content:center;width:100%;aspect-ratio:10/7;font-size:10px;font-weight:800;line-height:1.25;color:#cfe4ff;overflow:hidden}
+.library-tile-art img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 5px #000c)}
+.library-tile-art.cover-missing{border:1px dashed #33465f;border-radius:6px;padding:6px}
+.library-tile strong{font-size:11px;color:#f1f4f8;overflow-wrap:anywhere}
+@media(max-width:620px){.library-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;padding:12px}}
+
+/* v1.17: save states dialog and library filter. */
+.states-dialog{width:min(640px,calc(100% - 22px))}
+.states-game{margin:0;color:#cfe4ff;font-size:12px;font-weight:800}
+.states-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.state-slot{display:flex;flex-direction:column;gap:8px;padding:10px;border:1px solid #303c4d;border-radius:10px;background:linear-gradient(150deg,#121820,#080b10);min-width:0}
+.state-slot.active{border-color:#4f78b8;box-shadow:0 0 0 1px #2b5a9a44}
+.state-thumb{display:flex;align-items:center;justify-content:center;aspect-ratio:10/7;border-radius:6px;background:#05080d;border:1px dashed #263448;color:#6f8097;font-size:11px;font-weight:800;overflow:hidden}
+.state-thumb img{width:100%;height:100%;object-fit:cover;image-rendering:pixelated}
+.state-info{display:flex;flex-direction:column;gap:2px}
+.state-info strong{font-size:12px;color:#f1f4f8}
+.state-info small{font-size:10px;color:#8192a8}
+.state-actions{display:flex;gap:6px;flex-wrap:wrap}
+.state-actions .button{flex:1 1 auto;padding:7px 8px;font-size:11px;justify-content:center}
+.state-actions .button:disabled{opacity:.4;cursor:not-allowed}
+.states-hint{margin:0;color:#8192a8;font-size:10px}
+.library-filter-row{padding:12px 18px 0}
+.library-filter-row input{width:100%;padding:9px 12px;border:1px solid #33465f;border-radius:9px;background:#0b121b;color:var(--text)}
+@media(max-width:620px){.states-grid{grid-template-columns:1fr}.library-filter-row{padding:10px 12px 0}}

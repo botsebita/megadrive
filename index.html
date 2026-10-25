@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1018" />
+  <meta name="description" content="Botsebita Mega Drive Emulator: emulador web de Sega Mega Drive con biblioteca de cartuchos, controles táctiles superpuestos en pantalla completa móvil y multijugador P2P con sincronización de estado experimental." />
+  <title>Botsebita Mega Drive Emulator</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark sega-b-mark" aria-hidden="true"><svg viewBox="0 0 72 60" aria-hidden="true" focusable="false"><path d="M7 6H42C61 6 64 22 48 29C66 34 61 54 41 54H7Z" fill="#168cff" stroke="#91cbff" stroke-width="1.5"/><path d="M17 15H40C49 15 49 23 40 25H17Z" fill="#fff"/><path d="M17 35H40C50 35 49 44 40 45H17Z" fill="#fff"/></svg></div>
+      <div class="brand-copy"><div class="brand-title" data-i18n="appTitle">Botsebita Mega Drive Emulator</div><div class="brand-subtitle" data-i18n="appSubtitle">SEGA MEGA DRIVE · WEB EDITION · V1.10</div></div>
+      <div class="topbar-actions">
+        <label class="language-picker"><span data-i18n="language">Idioma</span><select id="language-select" aria-label="Language"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr">Français</option></select></label>
+        <button id="load-rom" class="button" type="button" title="Cargar ROM" data-i18n-title="loadRom">＋ <span data-i18n="loadRom">Cargar ROM</span></button>
+        <button id="open-settings" class="button icon-button" type="button" title="Ajustes" aria-label="Ajustes" data-i18n-title="settings">⚙</button>
+      </div>
+      <input id="rom-file" type="file" accept=".bin,.gen,.md,.smd,.zip,.68k,.sgd,.rom" hidden />
+    </header>
+
+    <div class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-heading"><span data-i18n="library">Biblioteca</span><span id="library-count" class="library-count">20</span></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-games" type="search" placeholder="Buscar juego…" aria-label="Buscar juego" data-i18n-placeholder="searchPlaceholder" data-i18n-aria="searchPlaceholder" /></label>
+        <div class="cartridge-carousel" role="group" aria-label="Selector de cartuchos" data-i18n-aria="cartridgeMenu">
+          <button id="cartridge-prev" class="cartridge-nav-button" type="button" aria-label="Cartucho anterior" data-i18n-aria="prevCartridge">‹</button>
+          <div class="cartridge-carousel-content">
+            <div class="cartridge-carousel-meta"><span data-i18n="cartridgeMenu">CARTUCHOS</span><span id="cartridge-position">1 / 20</span></div>
+            <button id="bundled-game" class="game-entry selected" type="button" aria-pressed="true">
+              <span class="game-art photo-art snow-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/snow-bros-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">SNOW BROS. NICK &amp; TOM</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>Snow Bros. - Nick &amp; Tom</strong></span>
+            </button>
+            <button id="homebrew-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art mines-art" aria-hidden="true">
+                <span class="cartridge-side">MEGA DRIVE</span>
+                <span class="cartridge-label"><img src="./covers/minesweeper-md.svg" alt="" loading="lazy"><b class="cover-fallback">MINESWEEPER MD</b></span>
+                <span class="cartridge-brand">SEGA</span>
+              </span>
+              <span class="game-entry-copy"><strong>Minesweeper MD</strong></span>
+            </button>
+            <button id="rangers-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art rangers-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/power-rangers-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">MIGHTY MORPHIN POWER RANGERS</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>Mighty Morphin Power Rangers</strong></span>
+            </button>
+            <button id="sf2-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art sf2-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/street-fighter-ii-sce-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">STREET FIGHTER II SPECIAL CHAMPION EDITION</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>Street Fighter II' - Special Champion Edition</strong></span>
+            </button>
+            <button id="worms-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art worms-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/worms-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">WORMS</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>Worms</strong></span>
+            </button>
+            <button id="sor3-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art sor3-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/streets-of-rage-3-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">STREETS OF RAGE 3</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>Streets of Rage 3</strong></span>
+            </button>
+            <button id="toejam-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art toejam-art" aria-hidden="true">
+                <span class="cartridge-label"><img src="./covers/toejam-earl-funkotron-cartridge.png" alt="" loading="lazy"><b class="cover-fallback">TOEJAM &amp; EARL IN PANIC ON FUNKOTRON</b></span>
+              </span>
+              <span class="game-entry-copy"><strong>ToeJam &amp; Earl in Panic on Funkotron</strong></span>
+            </button>
+            <button id="extra-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art photo-art extra-art" aria-hidden="true">
+                <span class="cartridge-label"><img id="extra-game-cover" src="" alt="" loading="lazy"><b id="extra-game-fallback" class="cover-fallback"></b></span>
+              </span>
+              <span class="game-entry-copy"><strong id="extra-game-title"></strong></span>
+            </button>
+            <button id="recent-carousel-game" class="game-entry" type="button" aria-pressed="false" hidden>
+              <span class="game-art custom-art" aria-hidden="true"><span class="cartridge-side">MEGA DRIVE</span><span class="cartridge-label"><b id="recent-cover-title" class="cover-fallback">ROM PROPIA</b></span><span class="cartridge-brand">SEGA</span></span>
+              <span class="game-entry-copy"><strong id="recent-carousel-title">ROM propia</strong></span>
+            </button>
+            <p class="cartridge-carousel-hint" data-i18n="carouselHint">Usa las flechas para cambiar de cartucho</p>
+          </div>
+          <button id="cartridge-next" class="cartridge-nav-button" type="button" aria-label="Cartucho siguiente" data-i18n-aria="nextCartridge">›</button>
+        </div>
+        <button id="open-full-library" class="button full-library-button" type="button"><span aria-hidden="true">▦</span> <span data-i18n="viewFullLibrary">Ver biblioteca completa</span></button>
+        <section class="mobile-rom-loader" aria-label="Cargar una ROM propia">
+          <div class="mobile-rom-loader-copy"><strong data-i18n="loadYourRomsTitle">¿Tienes tus propias ROM?</strong><small data-i18n="loadYourRomsHint">Abre archivos de Mega Drive guardados en tu teléfono o equipo.</small></div>
+          <button id="mobile-load-rom" class="button primary" type="button">＋ <span data-i18n="loadOwnRom">Cargar una ROM propia</span></button>
+        </section>
+        <div class="library-label recent-label" data-i18n="recent">RECIENTES</div>
+        <div id="recent-games" class="recent-list"><p class="empty-recent" data-i18n="recentEmpty">Las ROM que cargues aparecerán aquí.</p></div>
+        <div class="sidebar-spacer"></div>
+        <div class="sidebar-note"><span class="note-icon">ⓘ</span><p data-i18n="romNotice">La ROM precargada es comercial y fue aportada al proyecto. Publicá el paquete con ella solo si tenés derecho a redistribuirla. Minesweeper MD es homebrew con licencia MIT.</p></div>
+        <div class="credits" data-i18n="credits">Núcleo del emulador: Monte Ohrt · Licencia MIT</div>
+      </aside>
+
+      <main class="player-column">
+        <section class="player-heading">
+          <div><div class="eyebrow" data-i18n="nowPlaying">AHORA EN REPRODUCCIÓN</div><h1 id="playing-title">Snow Bros. - Nick &amp; Tom</h1></div>
+          <div class="player-status-group">
+            <div id="status-pill" class="status-pill"><span class="status-dot"></span><span id="status-text">Iniciando consola…</span></div>
+            <div id="player2-indicator" class="player2-indicator" data-state="off" data-quality="0" aria-label="Player 2 off">
+              <span class="player2-name" data-i18n="player2">JUGADOR 2</span>
+              <strong id="player2-connection-text" data-i18n="p2Off">OFF</strong>
+              <span class="connection-signal" id="player2-signal" data-level="0" aria-label="Signal quality">
+                <i></i><i></i><i></i><i></i><i></i>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <section id="stage" class="stage" aria-label="Pantalla de juego">
+          <div class="stage-grain" aria-hidden="true"></div>
+          <div class="screen-surround"><div class="screen-slot" id="screen-slot"><canvas id="game-screen" width="320" height="224" aria-label="Pantalla de la consola Mega Drive" data-i18n-aria="gameScreen"></canvas><div id="scanlines" class="scanlines" hidden></div></div></div>
+          <div class="stage-corner top-left stage-mini-status" aria-label="Estado de consola y Jugador 2">
+            <span class="power-mini">POWER <span id="power-led"></span></span>
+            <span class="mini-status-separator" aria-hidden="true"></span>
+            <span id="fullscreen-player2-indicator" class="fullscreen-player2-indicator" data-state="off" data-quality="0" aria-label="Jugador 2 desconectado">
+              <span class="mini-player-label">P2</span><strong id="fullscreen-player2-connection-text">OFF</strong>
+              <span id="fullscreen-player2-signal" class="mini-connection-signal" data-level="0" aria-label="Señal del Jugador 2"><i></i><i></i><i></i><i></i><i></i></span>
+            </span>
+          </div>
+          <div class="stage-corner bottom-left" aria-hidden="true">NTSC / PAL</div>
+          <div class="stage-corner top-right stage-b-mark" aria-label="Botsebita" title="Botsebita"><svg viewBox="0 0 72 60" aria-hidden="true" focusable="false"><path d="M7 6H42C61 6 64 22 48 29C66 34 61 54 41 54H7Z" fill="#168cff" stroke="#91cbff" stroke-width="1.5"/><path d="M17 15H40C49 15 49 23 40 25H17Z" fill="#fff"/><path d="M17 35H40C50 35 49 44 40 45H17Z" fill="#fff"/></svg></div>
+          <div id="mobile-fullscreen-controls" class="mobile-fullscreen-controls" hidden aria-label="Controles táctiles en pantalla completa">
+            <button id="mobile-fullscreen-exit" class="mobile-fullscreen-exit" type="button" aria-label="Salir de pantalla completa" title="Salir de pantalla completa">×</button>
+            <div id="mobile-fs-size-slot" class="mobile-fs-size-slot"></div>
+            <div id="mobile-fs-pad-slot" class="mobile-fs-pad-slot"></div>
+          </div>
+          <div id="pause-overlay" class="pause-overlay" hidden>
+            <div class="pause-card"><div class="pause-symbol">Ⅱ</div><p class="eyebrow" data-i18n="paused">JUEGO EN PAUSA</p><h2 id="pause-title">Snow Bros. - Nick &amp; Tom</h2><button id="resume-game" class="button primary" type="button" data-i18n="resume">▶ Continuar</button><button id="restart-menu" class="button" type="button" data-i18n="restartConsole">↻ Reiniciar consola</button><button id="states-menu" class="button" type="button" data-i18n="statesMenu">💾 Estados guardados</button><button id="settings-menu" class="button" type="button" data-i18n="settings">⚙ Ajustes</button><button id="close-game" class="button subtle" type="button" data-i18n="powerOff">Apagar consola</button></div>
+          </div>
+        </section>
+
+        <div class="transport-bar">
+          <div class="transport-buttons"><button id="pause-button" class="button primary" type="button" disabled>Ⅱ <span data-i18n="menu">Menú</span></button><button id="restart-button" class="button" type="button" disabled>↻ <span data-i18n="restart">Reiniciar</span></button><button id="states-button" class="button" type="button" disabled>💾 <span data-i18n="statesButton">Estados</span></button><button id="fullscreen-button" class="button" type="button">⛶ <span data-i18n="fullscreen">Pantalla completa</span></button></div>
+          <div id="controller-status" class="controller-status"><span class="controller-icon">⌘</span><span data-i18n="keyboardHint">Flechas · Z X C · Enter</span></div>
+        </div>
+
+        <div id="message-line" class="message-line" role="status" data-i18n="loadingBundled">Cargando el juego precargado…</div>
+
+        <details id="netplay-panel" class="netplay-panel">
+          <summary><span><strong data-i18n="playFriend">Jugar online con un amigo</strong><small data-i18n="peerToPeer">Conexión directa · sin cuenta</small></span><span id="netplay-state" class="netplay-state" data-state="idle">Desconectado</span></summary>
+          <div class="netplay-content">
+            <p class="netplay-explainer" data-i18n="netplayIntro">El Jugador 1 crea una sala y comparte un código de seis caracteres. El Jugador 2 lo introduce y pulsa «Unirme». Ambos deben cargar exactamente la misma ROM.</p>
+            <section id="netplay-auto-panel" class="netplay-auto-panel" aria-label="Conexión automática online">
+              <div class="netplay-auto-heading"><strong data-i18n="onlineModeTitle">Conexión sencilla por código</strong><span id="netplay-auto-status" class="netplay-auto-status" data-state="idle" data-i18n="disconnected">Desconectado</span></div>
+              <p class="netplay-auto-intro" data-i18n="onlineModeIntro">El Jugador 1 crea una sala y comparte un código corto. El Jugador 2 lo introduce; el emulador negocia la conexión automáticamente.</p>
+              <div class="netplay-auto-actions">
+                <button id="netplay-auto-create-room" class="button primary" type="button" data-i18n="hostOnline">Crear sala online</button>
+                <div class="netplay-auto-join"><label for="netplay-auto-room-input" data-i18n="roomCodeLabel">Código de sala</label><div><input id="netplay-auto-room-input" class="netplay-room-input" type="text" maxlength="6" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC123" data-i18n-placeholder="joinRoomCodePlaceholder"/><button id="netplay-auto-join-room" class="button" type="button" data-i18n="joinOnline">Unirme</button></div></div>
+              </div>
+              <div id="netplay-auto-room-share" class="netplay-auto-room-share" hidden><div><span data-i18n="roomCodeLabel">Código de sala</span><strong id="netplay-auto-room-code">------</strong></div><button id="netplay-auto-copy-room" class="button" type="button" data-i18n="copyRoomCode">Copiar código</button><p data-i18n="roomCodeHint">Envía este código a tu amigo. Él lo introduce en el campo de arriba.</p></div>
+              <button id="netplay-auto-start" class="button primary netplay-auto-start" type="button" disabled hidden data-i18n="startTogether">Iniciar juntos</button>
+              <p id="netplay-server-config-note" class="netplay-config-note" data-i18n="serverNotConfigured">Las salas usan PeerJS Cloud para intercambiar la información de conexión. El emulador usa la configuración STUN/TURN predeterminada de PeerJS; algunas redes pueden impedir la conexión.</p>
+            </section>
+            <button id="netplay-disconnect" class="button subtle netplay-disconnect" type="button" disabled data-i18n="disconnect">Desconectar</button>
+            <p class="netplay-warning" data-i18n="netplayWarning">Netplay experimental: puede haber retraso o desincronización. Algunas redes bloquean la conexión directa; todavía no incluye el sistema rollback de Dolphin.</p>
+          </div>
+        </details>
+        <section class="touch-controls" aria-label="Controles táctiles" data-i18n-aria="touchControls">
+          <div class="touch-size-control">
+            <label for="touch-size"><strong data-i18n="touchSize">Tamaño del mando</strong><small data-i18n="touchSizeHint">Ajusta el tamaño para que te resulte cómodo</small></label>
+            <div class="touch-size-slider"><input id="touch-size" type="range" min="80" max="115" step="5" value="100" aria-label="Tamaño de los controles"><output id="touch-size-value" for="touch-size">100%</output></div>
+          </div>
+          <div class="controller-shell">
+            <div class="dpad" aria-label="Cruceta direccional" data-i18n-aria="dpad">
+              <button class="pad-button dpad-up" data-action="up" aria-label="Arriba" data-i18n-aria="up" type="button">&nbsp;</button><button class="pad-button dpad-left" data-action="left" aria-label="Izquierda" data-i18n-aria="left" type="button">&nbsp;</button><button class="pad-button dpad-right" data-action="right" aria-label="Derecha" data-i18n-aria="right" type="button">&nbsp;</button><button class="pad-button dpad-down" data-action="down" aria-label="Abajo" data-i18n-aria="down" type="button">&nbsp;</button><span class="arcade-stick-hardware" aria-hidden="true"><i class="arcade-stick-stem"></i><i class="arcade-stick-ball"></i></span>
+            </div>
+            <div class="controller-center"><div class="controller-wordmark">SEGA</div><div class="utility-buttons"><button class="pad-button start-button" data-action="start" aria-label="Start" type="button">START</button><div class="secondary-utility-buttons"><button class="pad-button select-button" data-action="mode" aria-label="Select" type="button">SELECT</button></div></div></div>
+            <div class="action-pad" aria-label="Botones de acción">
+              <button class="pad-button face-button face-x" data-action="x" type="button">X</button><button class="pad-button face-button face-y" data-action="y" type="button">Y</button><button class="pad-button face-button face-z" data-action="z" type="button">Z</button><button class="pad-button face-button face-a" data-action="a" type="button">A</button><button class="pad-button face-button face-b" data-action="b" type="button">B</button><button class="pad-button face-button face-c" data-action="c" type="button">C</button>
+            </div>
+          </div>
+          <p class="touch-hint" data-i18n="touchHint">Mando estilo Mega Drive: cruceta, A/B/C, X/Y/Z, START y botones auxiliares.</p>
+        </section>
+        <footer class="player-footer"><span data-i18n="footerInputs">Compatible con teclado, mando USB y controles táctiles.</span><span data-i18n="footerAudio">El sonido comienza tras la primera interacción.</span></footer>
+      </main>
+    </div>
+  </div>
+
+  <dialog id="states-dialog" class="settings-dialog states-dialog">
+    <form method="dialog" class="settings-header"><div><p class="eyebrow" data-i18n="statesButton">Estados</p><h2 data-i18n="statesTitle">Estados guardados</h2></div><button class="button icon-button" value="cancel" aria-label="Cerrar" data-i18n-aria="closeDialog">✕</button></form>
+    <div class="settings-content">
+      <p id="states-game" class="states-game"></p>
+      <div id="states-grid" class="states-grid"></div>
+      <p class="states-hint" data-i18n="stateHint">Atajos: F5 guarda en la última ranura usada y F8 la carga.</p>
+    </div>
+  </dialog>
+
+  <dialog id="library-dialog" class="settings-dialog library-dialog">
+    <form method="dialog" class="settings-header"><div><p class="eyebrow" data-i18n="library">Biblioteca</p><h2 data-i18n="fullLibraryTitle">Biblioteca completa</h2></div><button class="button icon-button" value="cancel" aria-label="Cerrar biblioteca" data-i18n-aria="closeLibrary">✕</button></form>
+    <div class="library-filter-row"><input id="library-filter" type="search" placeholder="Filtrar cartuchos…" aria-label="Filtrar cartuchos" data-i18n-placeholder="filterLibrary" data-i18n-aria="filterLibrary" /></div>
+    <div id="library-grid" class="library-grid"></div>
+  </dialog>
+
+  <dialog id="settings-dialog" class="settings-dialog">
+    <form method="dialog" class="settings-header"><div><p class="eyebrow" data-i18n="preferences">PREFERENCIAS</p><h2 data-i18n="consoleSettings">Ajustes de la consola</h2></div><button class="button icon-button" value="cancel" aria-label="Cerrar ajustes">✕</button></form>
+    <div class="settings-content">
+      <label class="setting-field"><span data-i18n="region">Región</span><select id="setting-region"><option value="auto" data-i18n="regionAuto">Automática, según el cartucho</option><option value="export" data-i18n="regionExport">Exportación (América / Europa)</option><option value="japan" data-i18n="japan">Japón</option></select></label>
+      <label class="setting-field"><span data-i18n="tvSystem">Sistema de televisión</span><select id="setting-tv"><option value="auto" data-i18n="automatic">Automático</option><option value="ntsc">NTSC · 60 Hz</option><option value="pal">PAL · 50 Hz</option></select></label>
+      <label class="setting-field"><span data-i18n="controller">Mando</span><select id="setting-pad"><option value="six" data-i18n="sixButtons">6 botones (A B C X Y Z)</option><option value="three" data-i18n="threeButtons">3 botones (A B C)</option></select></label>
+      <label class="setting-field"><span data-i18n="controllerStyle">Diseño del mando</span><select id="setting-controller-style"><option value="sega" data-i18n="segaPad">Mando clásico Mega Drive</option><option value="arcade" data-i18n="arcadePad">Tablero arcade</option></select></label>
+      <label class="setting-field"><span><span data-i18n="volume">Volumen</span> <output id="volume-value">70%</output></span><input id="setting-volume" type="range" min="0" max="100" value="70" /></label>
+      <label class="setting-toggle"><span><strong data-i18n="sound">Sonido</strong><small data-i18n="emulatorAudio">Audio del emulador</small></span><input id="setting-sound" type="checkbox" checked /></label>
+      <label class="setting-toggle"><span><strong data-i18n="crtFilter">Filtro CRT</strong><small data-i18n="scanlineDesc">Líneas de barrido retro</small></span><input id="setting-crt" type="checkbox" /></label>
+      <label class="setting-toggle"><span><strong data-i18n="lowLatency">Modo de baja latencia</strong><small data-i18n="lowLatencyDesc">Usa menos búfer de audio. Desactívalo si oyes cortes.</small></span><input id="setting-latency" type="checkbox" checked /></label>
+      <label class="setting-toggle"><span><strong data-i18n="integerScale">Escala de píxeles entera</strong><small data-i18n="pixelDesc">Evita píxeles suavizados</small></span><input id="setting-integer" type="checkbox" checked /></label>
+      <div class="setting-field"><span data-i18n="keyMapping">Asignación de teclas</span><div id="key-bindings" class="key-bindings"></div><p id="binding-hint" class="small-hint" data-i18n="keyMappingHint">Pulsa un control y después la tecla que quieres asignarle. Escape cancela.</p></div>
+      <div class="settings-footer"><button id="reset-settings" class="button" type="button" data-i18n="resetControls">Restaurar controles</button><button id="save-settings" class="button primary" type="button" data-i18n="saveSettings">Guardar ajustes</button></div>
+    </div>
+  </dialog>
+  <script src="./netplay-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js" crossorigin="anonymous"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420">
+<defs>
+  <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#06172b"/><stop offset=".48" stop-color="#063f85"/><stop offset="1" stop-color="#03101f"/></linearGradient>
+  <linearGradient id="blue" x2=".2" y2="1"><stop stop-color="#5ad8ff"/><stop offset=".35" stop-color="#168dff"/><stop offset="1" stop-color="#0751b7"/></linearGradient>
+  <linearGradient id="gold" x2="0" y2="1"><stop stop-color="#fff49b"/><stop offset=".55" stop-color="#ffbf16"/><stop offset="1" stop-color="#b56a00"/></linearGradient>
+  <pattern id="checks" width="52" height="52" patternUnits="userSpaceOnUse" patternTransform="rotate(-18)"><rect width="52" height="52" fill="none"/><rect width="26" height="26" fill="#fff" opacity=".11"/><rect x="26" y="26" width="26" height="26" fill="#fff" opacity=".11"/></pattern>
+  <pattern id="rings" width="210" height="155" patternUnits="userSpaceOnUse" patternTransform="rotate(8)"><g fill="none" stroke="url(#gold)" stroke-width="8" opacity=".9"><ellipse cx="32" cy="40" rx="15" ry="23"/><ellipse cx="146" cy="112" rx="15" ry="23" transform="rotate(43 146 112)"/></g><path d="M91 15l5 13 14 1-11 9 4 13-12-7-12 7 4-13-11-9 14-1z" fill="#fff26d" opacity=".72"/></pattern>
+  <g id="sonic-sticker">
+    <path d="M-94 -15L-139 -58L-101 -59L-132 -101L-77 -88L-85 -130L-43 -105L-22 -146L5 -106L43 -127L40 -85L83 -96L63 -61L100 -47L69 -25L88 4L56 20L44 60L12 42L-12 77L-35 40L-74 52L-69 18L-103 20Z" fill="url(#blue)" stroke="#021c49" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M-58 -69C-36 -96 3 -88 17 -64C31 -46 28 -22 11 -5L-15 15L-64 3C-82 -17 -78 -48 -58 -69Z" fill="#168dff" stroke="#092f6c" stroke-width="5"/>
+    <path d="M-66 -45C-48 -68 -22 -73 -4 -61C-27 -58 -39 -46 -49 -28" fill="none" stroke="#75e1ff" stroke-width="7" stroke-linecap="round" opacity=".72"/>
+    <path d="M-33 -21C-14 -6 2 -5 19 -16" fill="none" stroke="#064993" stroke-width="5" stroke-linecap="round" opacity=".7"/>
+    <path d="M-32 31C-19 42 3 46 20 35L39 46L24 61L-15 58L-40 45Z" fill="#ed1b2f" stroke="#7a0715" stroke-width="4"/><path d="M-23 51L14 53" stroke="#fff" stroke-width="5"/>
+  </g>
+</defs>
+<rect width="1280" height="420" fill="url(#bg)"/>
+<rect width="1280" height="420" fill="url(#checks)"/>
+<path d="M0 55L1280 0M0 115L1280 60M0 175L1280 120M0 235L1280 180M0 295L1280 240M0 355L1280 300M0 415L1280 360" stroke="#29aaff" stroke-width="13" opacity=".16"/>
+<rect width="1280" height="420" fill="url(#rings)" opacity=".72"/>
+<g opacity=".95">
+  <use href="#sonic-sticker" transform="translate(126 203) scale(.86) rotate(-9)"/>
+  <use href="#sonic-sticker" transform="translate(445 106) scale(.42) rotate(14)"/>
+  <use href="#sonic-sticker" transform="translate(842 298) scale(.55) rotate(-14)"/>
+  <use href="#sonic-sticker" transform="translate(1146 176) scale(.82) rotate(10)"/>
+</g>
+<text x="640" y="218" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="126" font-weight="900" font-style="italic" fill="#1da1ff" stroke="#e3f8ff" stroke-width="2" opacity=".28" letter-spacing="-7">SONIC</text>
+<path d="M0 395H1280" stroke="#74d6ff" stroke-width="6" opacity=".55"/>
+<g fill="#fff" opacity=".88"><circle cx="27" cy="25" r="5"/><circle cx="1252" cy="28" r="5"/><circle cx="637" cy="397" r="4"/></g>
+</svg>
